@@ -1,0 +1,96 @@
+﻿@using System.Globalization
+@model List<string>
+
+@{
+}
+<small class="form-text text-muted">Kéo biểu tượng di chuyển để thay đổi thứ tự</small>
+<br />
+<div class="list list-row">
+    <div class="list-item row" data-id="">
+        <div class="flex col-1">
+        </div>
+        <div class="flex col-10">
+            @Html.TextBox("NewCustomerLabel", "", new { @class = "form-control", @placeHolder = "Thêm nhãn" })
+        </div>
+        <div class="flex col-1">
+            <div class="btn btn-sm btn-primary" onclick="AddCustomerLabel()">
+                <i data-feather="plus"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="list list-row card CustomerLabels" id="sortable-handle" data-plugin="sort">
+    @if (Model != null && Model.Count > 0)
+    {
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="list-item row" data-id="@i">
+                <div class="text-muted js-handle col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-move"><polyline points="5 9 2 12 5 15"></polyline><polyline points="9 5 12 2 15 5"></polyline><polyline points="15 19 12 22 9 19"></polyline><polyline points="19 9 22 12 19 15"></polyline><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+                </div>
+                <div class="flex col-10">
+                    @Html.TextBox("CustomerLabel_" + i, Model[i], new { @class = "form-control label-value" })
+                </div>
+                <div class="flex text-muted col-1" onclick="RemoveCustomerLabel()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                </div>
+            </div>
+        }
+    }
+</div>
+<script id="CustomerLabelTemplate" type="text/template">
+    <div class="list-item row" data-id="{InputName.Id}" data-item-sortable-id="0" role="option" aria-grabbed="false">
+        <div class="text-muted js-handle col-1" draggable="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-move"><polyline points="5 9 2 12 5 15"></polyline><polyline points="9 5 12 2 15 5"></polyline><polyline points="15 19 12 22 9 19"></polyline><polyline points="19 9 22 12 19 15"></polyline><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+        </div>
+        <div class="flex col-10">
+            @Html.TextBox("CustomerLabel_{Index}", "{Value}", new { @class = "form-control label-value" })
+        </div>
+        <div class="flex text-muted col-1" onclick="RemoveCustomerLabel()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+        </div>
+    </div>
+</script>
+
+<script src="~/Content/Basik/assets/js/theme.js"></script>
+<script>
+
+    AddCustomerLabel = function () {
+        var newCustomerLabel = $("#NewCustomerLabel").val();
+        if (newCustomerLabel == null || newCustomerLabel.trim() == '') {
+            return;
+        }
+        newCustomerLabel = newCustomerLabel.trim();
+
+        //kiểm tra có trang danh sách chưa
+        var list = GetCustomerLabels();
+        if (list != null && list.find(t => t == newCustomerLabel) != null) {
+            toastr.error("Nhãn đã tồn tại trong danh sách")
+            return
+        }
+
+        var template = $("#CustomerLabelTemplate").html();
+        var data = "";
+        data = template.replaceAll("{Index}", NewGUI());
+        data = data.replaceAll("{Value}", newCustomerLabel);
+
+        $("#sortable-handle").append(data);
+        //cần reload lại để có thể sắp xếp các item mới
+        sortable("#sortable-handle");
+        $("#NewCustomerLabel").val("");
+    }
+
+    GetCustomerLabels = function () {
+        var customerLabels = [];
+        $(".CustomerLabels .list-item").each(function (index, ele) {
+            var name = $(this.getElementsByClassName("label-value")).val();
+            customerLabels.push(name);
+        });
+        return customerLabels;
+    }
+
+    RemoveCustomerLabel = function () {
+        ele = event.target.closest(".list-item").remove()
+    }
+
+</script>

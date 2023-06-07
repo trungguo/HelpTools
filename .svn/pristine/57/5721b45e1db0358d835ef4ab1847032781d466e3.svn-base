@@ -1,0 +1,61 @@
+﻿@using SaleDXGui.Domains
+@using SaleDXGui.Models
+@model SearchResultModel<CustomerSearchModel, List<Customer>>
+@{
+
+}
+@if (Model?.Data == null || Model.Data.Count == 0)
+{
+    <tr class="v-middle">
+        <td class="text-muted text-center" colspan="8">
+            Không tìm thấy kết quả
+        </td>
+    </tr>
+}
+else
+{
+    foreach (var item in Model.Data)
+    {
+        <tr class="v-middle">
+            <td>
+                <label class="ui-check m-0 ">
+                    <input class="item-checkbox" type="checkbox" name="id" item-id="@item.Id">
+                    <i></i>
+                </label>
+            </td>
+            <td>
+                <a href="/Customer/Details?id=@item.Id">
+                    @item.Code
+                </a>
+            </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @(string.Join("|", item.Labels ?? new List<string>()))
+            </td>
+            <td>
+                @Html.Raw(item.ContactPointString?.Replace("\n", "<br />") ?? string.Empty)
+            </td>
+            <td>
+                @(item.DOB.HasValue ? item.DOB.Value.ToLocalTime().ToString("yyyy-MM-dd"): "")
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Email
+            </td>
+        </tr>
+    }
+
+    <script>
+    $(function () {
+        initTable("#mainTable", false);
+        initPager("#mainTable", @(Model.SearchModel.PageIndex),  @(Model.SearchModel.PageSize),  @(Model.Total), function (pageIndex) { Search(pageIndex); });
+    })
+    </script>
+}

@@ -1,0 +1,57 @@
+﻿@using SaleDXGui.Domains
+@using SaleDXGui.Models
+@model SearchResultModel<List<Channel>>
+@{
+
+}
+@if (Model?.Data == null || Model.Data.Count == 0)
+{
+    <tr class="v-middle">
+        <td class="text-muted text-center" colspan="5">
+            Không tìm thấy kết quả
+        </td>
+    </tr>
+}
+else
+{
+    foreach (var item in Model.Data)
+    {
+        <tr class="v-middle">
+            <td>
+                <label class="ui-check m-0 ">
+                    <input class="item-checkbox" type="checkbox" name="id" item-id="@item.Id">
+                    <i></i>
+                </label>
+            </td>
+            <td>
+                <a href="/Channel/Details?id=@item.Id">
+                    @item.Code
+                </a>
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td class="text-left">
+                @if (item.IsActive)
+                {
+                    <div class="badge badge-md bg-primary-lt">Hoạt động</div>
+                }
+                else
+                {
+                    <div class="badge badge-md bg-danger-lt">Không hoạt động</div>
+                }
+            </td>
+        </tr>
+    }
+
+    <script>
+    $(function () {
+        initTable("#mainTable", false);
+        initPager("#mainTable", @(Model.SearchModel.PageIndex),  @(Model.SearchModel.PageSize),  @(Model.Total), function (pageIndex) { Search(pageIndex); });
+    })
+    </script>
+}
+
+
+
+

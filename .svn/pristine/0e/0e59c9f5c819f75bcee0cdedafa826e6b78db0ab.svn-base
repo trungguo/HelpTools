@@ -1,0 +1,48 @@
+﻿@using SaleDXGui.Domains
+@using SaleDXGui.Models
+@using System.Configuration;
+@model SearchResultModel<List<Album>>
+@{
+    var TextPadUri = ConfigurationSettings.AppSettings.Get("TextPadUri");
+}
+@if (Model?.Data == null || Model.Data.Count == 0)
+{
+    <tr class="v-middle">
+        <td class="text-muted text-center" colspan="3">
+            Không tìm thấy kết quả
+        </td>
+    </tr>
+}
+else
+{
+    foreach (var item in Model.Data)
+    {
+        <tr class="v-middle">
+            <td>
+                <label class="ui-check m-0 ">
+                    <input class="item-checkbox" type="checkbox" name="id" item-id="@item.Id">
+                    <i></i>
+                </label>
+            </td>
+            <td>
+                <a href="/Album/Details?id=@item.Id">
+                    @item.Code
+                </a>
+            </td>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+    }
+
+    <script>
+    $(function () {
+        initTable("#mainTable", false);
+        initPager("#mainTable", @(Model.SearchModel.PageIndex),  @(Model.SearchModel.PageSize),  @(Model.Total), function (pageIndex) { Search(pageIndex); });
+    })
+    </script>
+}
+
+
+
+

@@ -1,0 +1,151 @@
+﻿@using Textpad.Models
+
+@model NoteFile
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TextPad</title>
+    <meta name="title" content="TextPad">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="~/Content/Textpad/app.css" rel="stylesheet">
+</head>
+<body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-save" viewBox="0 0 24 24"><title>delete</title><path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"></path></symbol>
+            <symbol id="icon-delete" viewBox="0 0 24 24"><title>delete</title><path d="M6 19c0 1.105 0.895 2 2 2h8c1.105 0 2-0.895 2-2v-12h-12v12zM19 4h-3.5l-1-1h-5l-1 1h-3.5v2h14v-2z"></path></symbol>
+            <symbol id="icon-info-outline" viewBox="0 0 24 24"><title>info-outline</title><path d="M11 17h2v-6h-2v6zM12 2c-5.525 0-10 4.475-10 10s4.475 10 10 10 10-4.475 10-10-4.475-10-10-10zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2v-2h-2v2z"></path></symbol>
+            <symbol id="icon-invert-colors" viewBox="0 0 24 24"><title>invert-colors</title><path d="M17.655 7.93l-5.655-5.66-5.655 5.66c-3.125 3.125-3.125 8.19 0 11.315 1.56 1.56 3.61 2.345 5.655 2.345s4.095-0.78 5.655-2.345c3.125-3.125 3.125-8.19 0-11.315zM12 19.585c-1.605 0-3.11-0.625-4.24-1.76-1.135-1.13-1.76-2.635-1.76-4.24s0.625-3.11 1.76-4.245l4.24-4.24v14.485z"></path></symbol>
+            <symbol id="icon-file-download" viewBox="0 0 24 24"><title>file-download</title><path d="M19 9h-4v-6h-6v6h-4l7 7 7-7zM5 18v2h14v-2h-14z"></path></symbol>
+            <symbol id="icon-settings" viewBox="0 0 24 24"><title>settings</title><path d="M19.43 12.975c0.040-0.32 0.070-0.645 0.070-0.975s-0.030-0.655-0.070-0.975l2.115-1.655c0.19-0.15 0.245-0.42 0.12-0.64l-2-3.465c-0.125-0.215-0.385-0.305-0.61-0.215l-2.49 1.005c-0.515-0.395-1.080-0.73-1.69-0.985l-0.375-2.65c-0.045-0.235-0.25-0.42-0.5-0.42h-4c-0.25 0-0.455 0.185-0.495 0.42l-0.375 2.65c-0.61 0.255-1.175 0.585-1.69 0.985l-2.49-1.005c-0.225-0.085-0.485 0-0.61 0.215l-2 3.465c-0.125 0.215-0.070 0.485 0.12 0.64l2.11 1.655c-0.040 0.32-0.070 0.645-0.070 0.975s0.030 0.655 0.070 0.975l-2.11 1.655c-0.19 0.15-0.245 0.42-0.12 0.64l2 3.465c0.125 0.215 0.385 0.305 0.61 0.215l2.49-1.005c0.515 0.395 1.080 0.73 1.69 0.985l0.375 2.65c0.040 0.235 0.245 0.42 0.495 0.42h4c0.25 0 0.455-0.185 0.495-0.42l0.375-2.65c0.61-0.255 1.175-0.585 1.69-0.985l2.49 1.005c0.225 0.085 0.485 0 0.61-0.215l2-3.465c0.125-0.215 0.070-0.485-0.12-0.64l-2.11-1.655zM12 15.5c-1.935 0-3.5-1.565-3.5-3.5s1.565-3.5 3.5-3.5 3.5 1.565 3.5 3.5-1.565 3.5-3.5 3.5z"></path></symbol>
+            <symbol id="icon-refresh" viewBox="0 0 24 24"><title>refresh</title><path d="M17.65 6.35c-1.445-1.45-3.44-2.35-5.65-2.35-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.725 0 6.845-2.55 7.73-6h-2.080c-0.825 2.33-3.035 4-5.65 4-3.315 0-6-2.685-6-6s2.685-6 6-6c1.655 0 3.14 0.69 4.225 1.775l-3.225 3.225h7v-7l-2.35 2.35z"></path></symbol>
+            <symbol id="icon-format-size" viewBox="0 0 24 24"><title>format-size</title><path d="M9 4v3h5v12h3v-12h5v-3h-13zM3 12h3v7h3v-7h3v-3h-9v3z"></path></symbol>
+            <symbol id="icon-format-line-spacing" viewBox="0 0 24 24"><title>format-line-spacing</title><path d="M6 7h2.5l-3.5-3.5-3.5 3.5h2.5v10h-2.5l3.5 3.5 3.5-3.5h-2.5v-10zM10 5v2h12v-2h-12zM10 19h12v-2h-12v2zM10 13h12v-2h-12v2z"></path></symbol>
+            <symbol id="icon-wrap-text" viewBox="0 0 24 24"><title>wrap-text</title><path d="M4 19h6v-2h-6v2zM20 5h-16v2h16v-2zM17 11h-13v2h13.25c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2.25v-2l-3 3 3 3v-2h2c2.205 0 4-1.795 4-4s-1.795-4-4-4z"></path></symbol>
+            <symbol id="logo" viewBox="0 0 48 48"><title>TextPad</title><path d="M12 1c-1.5 0-2.2 1.5-2 2.7V5H4C2.6 5 1.7 6.4 2 7.7v37.5c0 1.4 1.7 2 3 1.8H44c1.4 0 2-1.7 1.8-3V7c0-1.4-1.7-2-3-1.8h-5V2.4c-.3-.8-1.2-1.5-2-1.4-1.5 0-2.2 1.5-2 2.7V5h-8V2.4c-.3-.8-1.2-1.5-2-1.4-1.5 0-2.2 1.5-2 2.7V5h-8V2.4c-.3-.8-1.2-1.5-2-1.4zM6 9h4v4.4c.3 1.8 3 2.2 3.8.5.4-1.6 0-3.2.2-4.7V9h8v4.4c.3 1.8 3 2.2 3.8.5.4-1.6 0-3.2.2-4.7V9h8v4.4c.3 1.8 3 2.2 3.8.5.4-1.6 0-3.2.2-4.7V9h4v34H6V9zm28.6 10H11.8c-1.8 0-2.6 2.7-1 3.7 1.2.6 2.8.2 4 .3h21.6c1.8-.3 2.2-3 .5-3.8-.8-.2-1.6-.2-2.4-.2zm0 8H11.8c-1.8 0-2.6 2.7-1 3.7 1.2.6 2.8.2 4 .3h21.6c1.8-.3 2.2-3 .5-3.8-.8-.2-1.6-.2-2.4-.2zm0 8H11.8c-1.8 0-2.6 2.7-1 3.7 1.2.6 2.8.2 4 .3h21.6c1.8-.3 2.2-3 .5-3.8-.8-.2-1.6-.2-2.4-.2z" /></symbol>
+        </defs>
+    </svg>
+
+    <header role="banner">
+        <nav>
+            <input style="display: none" id="fileId" type="text" value="@Model.Id">
+            <input style="margin-left: 4rem; max-width: unset" id="fileName" type="text" placeholder="Tên file..." value="@Model.FileName">
+            <button id="save" class="save-btn" title="Lưu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
+                    <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z" />
+                    <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                </svg>
+            </button>
+            <span id="saveStatus" style="padding-left: 10px">Đã lưu</span>
+            <div class="btn-group">
+                <button id="add" class="settings-btn" title="Thêm mới" onclick="location.href='/'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                </button>
+                <button id="dowload" class="settings-btn" title="Tải xuống">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                </button>
+                <button id="delete" class="settings-btn" title="Xóa">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                    </svg>
+                </button>
+                @*<button id="clear" class="clear-btn" title="Clear/Delete"><svg><use xlink:href="#icon-delete"></use></svg></button>*@
+                <button id="settings" class="settings-btn" title="Cài đặt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                    </svg>
+                </button>
+            </div>
+            <div id="setMenu" class="settings-menu">
+                <ul>
+                    <li class="settings-menu__item">
+                        <svg><use xlink:href="#icon-format-size"></use></svg>
+                        <input type="range" min="1" max="2" value="1" id="fs" step="0.1" title="Text size">
+                    </li>
+                    <li class="settings-menu__item">
+                        <svg><use xlink:href="#icon-format-line-spacing"></use></svg>
+                        <input type="range" min="1" max="3" value="1.9" id="lh" step="0.1" title="Line Height">
+                    </li>
+                    <li class="settings-menu__item">
+                        <svg><use xlink:href="#icon-wrap-text"></use></svg>
+                        <input type="range" min="1" max="32" value="16" id="lw" step="1" title="Line Width">
+                    </li>
+                    <li class="settings-menu__item">
+                        <button id="theme" title="Toggle Theme"><svg><use xlink:href="#icon-invert-colors"></use></svg></button>
+                        <button id="reset" title="Reset to Defaults"><svg><use xlink:href="#icon-refresh"></use></svg></button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    @*<div id="homepage" class="overlay" role="main">
+            <section>
+                <svg><use xlink:href="#logo"></use></svg>
+                <h1>TextPad</h1>
+                <p>This is a simple online notepad, no WYSIWYG, no fancy stuff, just write. The text will live in your browser until you decide to delete it, come back anytime to continue writing. You can also download your text as a .txt file after you're finished!</p>
+                <button id="start">Start Writing</button>
+                <p class="footnote">An experiment built by <a href="http://syndicatefx.com">Syndicatefx</a><br> Read <a href="http://textpad.surge.sh/disclaimer.html">Disclaimer</a></p><p class="footnote">source code on <a href="https://github.com/syndicatefx/textpad">Github</a></p>
+            </section>
+        </div>*@
+
+<textarea style="padding-left: 4rem; padding-right: 18rem" id="fileContent" placeholder="Nội dung..." spellcheck="false">@Model.FileContent</textarea>
+
+    <div id="ListNotedView" class="settings-menu settings-menu--open" style="z-index: 0; width: 16rem; height: auto">
+        <ul style="max-height: 90vh; overflow: auto;">
+            <li class="settings-menu__item" style="padding-top: 0.5rem; padding-bottom: 0.5rem">
+                <a style="color: darkblue; text-decoration: underline" href="/"></a>
+            </li>
+        </ul>
+    </div>
+
+    <footer role="contentinfo">
+        @*<button id="info" class="info-btn" title="Info"><svg><use xlink:href="#icon-info-outline"></use></svg></button>*@
+        <ul class="counter">
+            <li id="charCounter"></li>
+            <li id="wordCounter"></li>
+        </ul>
+    </footer>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/Textpad/app.js"></script>
+    <script>
+
+        var CurrentSaveStatus = true;
+        if ("@string.IsNullOrWhiteSpace(Model.Id)" == "True") {
+            CurrentSaveStatus = false;
+        } else {
+            removeNoted('@Model.Id');
+            addNotedName({ Id: '@Model.Id', FileName: '@Model.FileName' })
+        }
+
+        function UpdateSaveStatusSpan() {
+            if (CurrentSaveStatus) {
+                $("#saveStatus").text("Đã lưu")
+                document.getElementById('saveStatus').style.color = 'green';
+            } else {
+                $("#saveStatus").text("Chưa lưu")
+                document.getElementById('saveStatus').style.color = 'red';
+            }
+        }
+
+        $(document).ready(function () {
+            UpdateSaveStatusSpan();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+﻿@using SaleDXGui.Domains
+@{
+    ViewBag.Title = "Kho khách hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var firstDateOfMonth = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+    var lastDateOfMonth = firstDateOfMonth.AddMonths(1).AddDays(-1);
+    var Channels = (List<Channel>)ViewBag.Channels;
+}
+
+<div class="d-flex flex fixed-content">
+    <div class="fade aside aside-sm" id="content-aside">
+    </div>
+    <div class="d-flex flex" id="content-body">
+        <div class="d-flex flex-column flex">
+            <div class="navbar nav-filter">
+                <div class="float-left nav-quick-search">
+                    <div class="d-inline-block">
+                        <select id="S_CustomerLables" style="width: 200px" multiple onchange="Search()"></select>
+                    </div>
+                    <div class="d-inline-block">
+                        <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-title="Thêm nhãn" onclick="OpenCustomerLabelsModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="d-inline-block">
+                        <select id="S_Type" style="width: 50px" onchange="Search()">
+                            <option value=""></option>
+                            <option value="Cá nhân">Cá nhân</option>
+                            <option value="Nhóm">Nhóm</option>
+                        </select>
+                    </div>
+                    <div class="d-inline-block">
+                        <select id="S_Channels" style="width: 200px" multiple onchange="Search()">
+                            @if (Channels != null && Channels.Count > 0)
+                            {
+                                foreach (var item in Channels)
+                                {
+                                    <option value="@item.Code">@item.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="d-inline-block">
+                        Sinh nhật:
+                    </div>
+                    <div class="d-inline-block">
+                        @Html.TextBox("S_DOBFrom", null, new { @class = "form-control", @type = "date", onchange = "Search()" })
+                    </div>
+                    <div class="d-inline-block">
+                        @Html.TextBox("S_DOBTo", null, new { @class = "form-control", @type = "date", onchange = "Search()" })
+                    </div>
+
+                </div>
+                <div class="float-right">
+                    <div class="d-flex b-primary bottom ml-2 ml-sm-2 float-right row">
+                        <button onclick="ViewDetails('')" class="nav-link px-1 mx-1 text-primary" data-toggle="tooltip" data-title="Thêm mới">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle mx-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                        <button onclick="Export()" class="nav-link px-1 mx-1 text-success" data-toggle="tooltip" data-title="Tải về">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download mx-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                        <button onclick="OpenImport()" class="nav-link px-1 mx-1 text-warning" data-toggle="tooltip" data-title="Thêm nhiều">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload mx-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        </button>
+                        <button onclick="Delete()" class="nav-link px-1 mx-1 text-danger" data-toggle="tooltip" data-title="Xóa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 mx-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive p-3" style="padding-top: 0 !important">
+                <table class="table table-theme table-fixed-head v-middle main-table-custom" id="mainTable" data-pager="#mainListPager">
+                    <thead>
+                        <tr class="table-header-swapper" data-bind-to="#header-to-change" data-item-to-fire=".item-checkbox">
+                            <th style="width:20px;" no-swap="true">
+                                <label class="ui-check m-0">
+                                    <input type="checkbox" class="item-total-checkbox" data-bind-to=".item-checkbox">
+                                    <i></i>
+                                </label>
+                            </th>
+                            <th class="text-muted text-left">Mã</th>
+                            <th class="text-muted text-left">Loại</th>
+                            <th class="text-muted text-left">Tên</th>
+                            <th class="text-muted text-left">Nhãn</th>
+                            <th class="text-muted text-left">Điểm chạm</th>
+                            <th class="text-muted text-left">Ngày sinh</th>
+                            <th class="text-muted text-left">SĐT</th>
+                            <th class="text-muted text-left">Email</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-3 py-3 mt-auto">
+                <div class="d-flex align-items-center">
+                    <div class="flex d-flex flex-row" id="mainListPager">
+                    </div>
+                    <div>
+                        <span class="text-muted">Tổng số:</span>
+                        <span id="count" class="table-amount-count"> 0 </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="importModal" class="modal fade" data-backdrop="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <div class="modal-title text-md">Tải dữ liệu</div>
+                <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="importExcelForm" method="post" action="/Customer/Import">
+                    <div class="p-2 text-left">
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                                <input type="file" name="file" id="fileImport" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Đóng</button>
+                <button type="submit" form="importExcelForm" class="btn btn-primary">Xác nhận</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            activeMenu("#MenuCustomer")
+
+            $('#S_Type').select2({ placeholder: "Chọn loại", allowClear: true, width: '100%', dropdownAutoWidth: true })
+
+            $('#S_Channels').select2({ placeholder: "Chọn kênh", allowClear: true, width: '100%', dropdownAutoWidth: true })
+
+            $('#S_CustomerLables').select2({
+                placeholder: "Chọn nhãn khách hàng",
+                allowClear: true,
+                ajax: {
+                    url: '/Org/SearchCustomerLabels',
+                    data: function (params) {
+                        var query = {
+                            keyword: params.term,
+                            pageIndex: params.page || 1,
+                            pageSize: 20
+                        }
+                        return query;
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+                        var results = data.Data.map((item, index) => {
+                            return {
+                                id: item,
+                                text: item
+                            }
+                        })
+                        return {
+                            results: results,
+                            pagination: {
+                                more: (params.page * 20) < data.Total
+                            }
+                        };
+                    },
+                },
+            });
+
+            setTimeout(function () {
+                Search();
+            }, 1000);
+        });
+
+        function Search(pageIndex) {
+            var body = {
+                Keyword: $('#S_Keyword').val(),
+                PageIndex: pageIndex || 1,
+                PageSize: 10,
+                Model: {
+                    Labels: $("#S_CustomerLables").val(),
+                    Type: $("#S_Type").val(),
+                    Channels: $("#S_Channels").val(),
+                    DOBFrom: $("#S_DOBFrom").val(),
+                    DOBTo: $("#S_DOBTo").val(),
+                }
+            };
+
+            showLoading();
+            $.ajax({
+                url: "/Customer/_List",
+                data: body,
+                method: "POST",
+                accepts: "application/json",
+                success: function (result) {
+                    hideLoading();
+                    $("#mainTable tbody").html(result);
+                },
+                error: function (response, status, xhr) {
+                    toastr.error(response.statusText)
+                    hideLoading();
+                },
+            });
+        }
+
+        function ViewDetails(id) {
+            location.href = "/Customer/Details?id=" + id
+        }
+
+        function Delete(id) {
+            var ids = [];
+            if (id) {
+                ids.push(id);
+            } else {
+                var listInput = $('input.item-checkbox');
+                if (listInput == null || listInput.length <= 0) {
+                    toastr.error('Chưa chọn đối tượng');
+                    return;
+                }
+                listInput.map((index, item) => {
+                    if ($(item).prop('checked')) {
+                        ids.push($(item).attr('item-id'));
+                    }
+                });
+            }
+
+            if (ids.length <= 0) {
+                toastr.error('Chưa chọn đối tượng');
+                return;
+            }
+
+            DialogUtil.showDialog({
+                message: "Bạn có chắc chắn muốn xóa không?",
+                title: "Yêu cầu xác nhận",
+                icon: "question",
+                footer: null,
+                closeTime: 99999,
+                confirmButtonText: "Xác nhận",
+                confirmButtonAriaLabel: null,
+                customConfirmButtonClass: "confirm-delete",
+                cancelButtonText: "Hủy"
+            });
+
+            $(".confirm-delete").on("click", function () {
+                showLoading();
+                $.ajax({
+                    url: "/Customer/Delete",
+                    method: "POST",
+                    data: {
+                        ids: ids,
+                    },
+                    accepts: "application/json",
+                    success: function (data) {
+                        hideLoading();
+                        if (data.Success) {
+                            toastr.success(data.Message);
+                            setTimeout(Search(), 500);
+                        } else {
+                            toastr.error(data.Message);
+                        }
+                    },
+                    error: function (response, status, xhr) {
+                        toastr.error(response.statusText)
+                        hideLoading();
+                    },
+                });
+            });
+        }
+
+        function Export() {
+            showLoading("#body-container");
+            var body = {
+                Keyword: $('#S_Keyword').val(),
+                PageIndex: 0,
+                PageSize: 0,
+                Model: {
+                    Labels: $("#S_CustomerLables").val()
+                }
+            }
+            $.ajax({
+                url: "/Customer/Export",
+                data: body,
+                method: "POST",
+                accepts: "application/json",
+                success: function (data) {
+                    hideLoading();
+                    if (data.Success) {
+                        window.open("/Base/DownloadExcel?fileId=" + data.Data + "&fileName=Danh sách khách hàng.xlsx", '_blank').focus();
+                    } else {
+                        toastr.error(data.Message);
+                    }
+                },
+                error: function (response, status, xhr) {
+                    toastr.error(response.statusText)
+                    hideLoading();
+                },
+            });
+        }
+
+        function OpenImport() {
+            $('#fileImport').val(null)
+            $('#importModal').modal('show')
+        }
+
+        $('#importExcelForm').ajaxForm({
+            beforeSend: function (arr, $form, options) {
+
+            },
+            beforeSubmit: function (formData, jqForm, options) {
+                showLoading()
+            },
+            error: function (response, status, xhr) {
+                hideLoading()
+                toastr.error(response.statusText)
+            },
+            success: function (data, status, xhr, $el) {
+                hideLoading()
+                if (data.Success) {
+                    toastr.success(data.Message)
+                    $('#importModal').modal('toggle')
+                    $('#fileImport').val(null)
+                    setTimeout(Search(), 500);
+                } else {
+                    toastr.error(data.Message)
+                }
+            }
+        });
+
+    </script>
+}

@@ -1,0 +1,804 @@
+﻿@using SaleDXGui.Security
+@using System.Configuration
+@using SaleDXGui.Domains
+@{ var org = (CustomPrincipal)User;
+    var SysadminOrg = ConfigurationSettings.AppSettings.Get("SysadminOrg");}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Responsive, Bootstrap, BS4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- style -->
+    <!-- build:css ~/Content/Basik/assets/css/site.min.css -->
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/style.css" type="text/css" />
+    <!-- endbuild -->
+    <link href="~/Content/waitMe/waitMe.css" rel="stylesheet" />
+    <link href="~/Content/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/select2/dist/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <style>
+        .sidenav li.active {
+            background-color: #318ddd1c !important;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        #SearchAndSelectCustomerModal .select2-container {
+            width: inherit !important;
+        }
+    </style>
+</head>
+<body class="layout-row">
+    <!-- ############ Aside START-->
+    <div id="aside" class="page-sidenav no-shrink bg-light nav-dropdown fade" aria-hidden="true">
+        <div class="sidenav h-100 modal-dialog bg-light">
+            <!-- sidenav top -->
+            <div class="navbar">
+                <!-- brand -->
+                <a href="index.html" class="navbar-brand ">
+                    <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <g class="loading-spin" style="transform-origin: 256px 256px">
+                            <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                        </g>
+                    </svg>
+                    <!-- <img src="~/Content/Basik/assets/img/logo.png" alt="..."> -->
+                    <span class="hidden-folded d-inline l-s-n-1x ">SaleDX - @org.Id</span>
+                </a>
+                <!-- / brand -->
+            </div>
+            <!-- Flex nav content -->
+            <div class="flex scrollable hover">
+                <div class="nav-active-text-primary" data-nav>
+                    <ul class="nav bg">
+                        @if (org.Id == SysadminOrg)
+                        {
+                    <li id="MenuOrg">
+                        <a href="/Org">
+                            <span class="nav-icon text-primary"><i data-feather='home'></i></span>
+                            <span class="nav-text">Quản lý tổ chức</span>
+                        </a>
+                    </li>
+                                    <li id="MenuChannel">
+                                        <a href="/Channel">
+                                            <span class="nav-icon text-primary"><i data-feather='at-sign'></i></span>
+                                            <span class="nav-text">Quản lý kênh</span>
+                                        </a>
+                                    </li>
+ }
+                                else
+                                {
+                    <li id="MenuCustomer">
+                        <a href="/Customer">
+                            <span class="nav-icon text-primary"><i data-feather='users'></i></span>
+                            <span class="nav-text">Kho khách hàng</span>
+                        </a>
+                    </li>
+                    @*<li id="MenuAccount">
+        <a href="/IMAccount">
+            <span class="nav-icon text-success"><i data-feather='link'></i></span>
+            <span class="nav-text">Tài khoản IM</span>
+        </a>
+    </li>*@
+                                    <li id="MenuIMAccountConfig">
+                                        <a href="/IMAccountConfig">
+                                            <span class="nav-icon text-warning"><i data-feather='hash'></i></span>
+                                            <span class="nav-text">Cấu hình Tài khoản IM</span>
+                                        </a>
+                                    </li>
+                                                    <li id="MenuFBAccountConfig">
+                                                        <a href="/FBAccountConfig">
+                                                            <span class="nav-icon text-warning"><i data-feather='hash'></i></span>
+                                                            <span class="nav-text">Cấu hình Tài khoản FB</span>
+                                                        </a>
+                                                    </li>
+                                                                    <li id="MenuAutoLogin">
+                                                                        <a href="/AutoLogin">
+                                                                            <span class="nav-icon text-warning"><i data-feather='hash'></i></span>
+                                                                            <span class="nav-text">Auto Login FB</span>
+                                                                        </a>
+                                                                    </li>
+                                                                                    <li id="MenuNote">
+                                                                                        <a href="/Note">
+                                                                                            <span class="nav-icon text-success"><i data-feather='database'></i></span>
+                                                                                            <span class="nav-text">Dữ liệu</span>
+                                                                                        </a>
+                                                                                    </li>}
+                        <li>
+                            <a href="/Account/Logout">
+                                <span class="nav-icon text-danger"><i data-feather='log-out'></i></span>
+                                <span class="nav-text">Đăng xuất</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- sidenav bottom -->
+            @*<div class="no-shrink ">
+                    <div class="p-3 d-flex align-items-center">
+                        <div class="text-sm hidden-folded text-muted">
+                            Trial: 35%
+                        </div>
+                        <div class="progress mx-2 flex" style="height:4px;">
+                            <div class="progress-bar gd-success" style="width: 35%"></div>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+    <!-- ############ Aside END-->
+    <div id="main" class="layout-column flex">
+        <!-- ############ Header START-->
+        <div id="header" class="page-header ">
+            <div class="navbar navbar-expand-lg">
+                <!-- brand -->
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <g class="loading-spin" style="transform-origin: 256px 256px">
+                            <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                        </g>
+                    </svg>
+                    <!-- <img src="~/Content/Basik/assets/img/logo.png" alt="..."> -->
+                    <span class="hidden-folded d-inline l-s-n-1x d-lg-none">SaleDX</span>
+                </a>
+                <!-- / brand -->
+                <!-- Navbar collapse -->
+                <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarToggler">
+                    <form class="input-group m-2 my-lg-0 ">
+                        <div class="input-group-prepend">
+                            <button onclick="Search()" type="button" class="btn no-shadow no-bg px-0 text-inherit">
+                                <i data-feather="search"></i>
+                            </button>
+                        </div>
+                        <input id="S_Keyword" onchange="Search()" type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Tìm kiếm...">
+                    </form>
+                </div>
+                <ul class="nav navbar-menu order-1 order-lg-2">
+                    <!--<li class="nav-item d-none d-sm-block">
+                        <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                            <i data-feather="maximize"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link px-2" data-toggle="dropdown">
+                            <i data-feather="settings"></i>
+                        </a>-->
+                    <!-- ############ Setting START-->
+                    <!--<div class="dropdown-menu dropdown-menu-center mt-3 w-md animate fadeIn">
+                        <div class="setting px-3">
+                            <div class="mb-2 text-muted">
+                                <strong>Setting:</strong>
+                            </div>
+                            <div class="mb-3" id="settingLayout">
+                                <label class="ui-check ui-check-rounded my-1 d-block">
+                                    <input type="checkbox" name="stickyHeader">
+                                    <i></i>
+                                    <small>Sticky header</small>
+                                </label>
+                                <label class="ui-check ui-check-rounded my-1 d-block">
+                                    <input type="checkbox" name="stickyAside">
+                                    <i></i>
+                                    <small>Sticky aside</small>
+                                </label>
+                                <label class="ui-check ui-check-rounded my-1 d-block">
+                                    <input type="checkbox" name="foldedAside">
+                                    <i></i>
+                                    <small>Folded Aside</small>
+                                </label>
+                                <label class="ui-check ui-check-rounded my-1 d-block">
+                                    <input type="checkbox" name="hideAside">
+                                    <i></i>
+                                    <small>Hide Aside</small>
+                                </label>
+                            </div>
+                            <div class="mb-2 text-muted">
+                                <strong>Color:</strong>
+                            </div>
+                            <div class="mb-2">
+                                <label class="radio radio-inline ui-check ui-check-md">
+                                    <input type="radio" name="bg" value="">
+                                    <i></i>
+                                </label>
+                                <label class="radio radio-inline ui-check ui-check-color ui-check-md">
+                                    <input type="radio" name="bg" value="bg-dark">
+                                    <i class="bg-dark"></i>
+                                </label>
+                            </div>
+                            <div class="mb-2 text-muted">
+                                <strong>Layouts:</strong>
+                            </div>
+                            <div class="mb-3">
+                                <a href="dashboard.html" class="btn btn-xs btn-white no-ajax mb-1">Default</a>
+                                <a href="layout.a.html?bg" class="btn btn-xs btn-primary no-ajax mb-1">A</a>
+                                <a href="layout.b.html?bg" class="btn btn-xs btn-info no-ajax mb-1">B</a>
+                                <a href="layout.c.html?bg" class="btn btn-xs btn-success no-ajax mb-1">C</a>
+                                <a href="layout.d.html?bg" class="btn btn-xs btn-warning no-ajax mb-1">D</a>
+                            </div>
+                            <div class="mb-2 text-muted">
+                                <strong>Apps:</strong>
+                            </div>
+                            <div>
+                                <a href="dashboard.html" class="btn btn-sm btn-white no-ajax mb-1">Dashboard</a>
+                                <a href="music.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Music</a>
+                                <a href="video.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Video</a>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- ############ Setting END-->
+                    <!--</li>-->
+                    <!-- Notification -->
+                    <!--<li class="nav-item dropdown">
+                    <a class="nav-link px-2 mr-lg-2" data-toggle="dropdown">
+                        <i data-feather="bell"></i>
+                        <span class="badge badge-pill badge-up bg-primary">5</span>
+                    </a>-->
+                    <!-- dropdown -->
+                    <!--<div class="dropdown-menu dropdown-menu-right mt-3 w-md animate fadeIn p-0">
+                        <div class="scrollable hover" style="max-height: 250px">
+                            <div class="list list-row">
+                                <div class="list-item " data-id="5">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-warning">
+                                                <img src="~/Content/Basik/assets/img/a5.jpg" alt=".">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            Learn how to use
+                                            <a href='#'>Google Analytics</a> to discover vital information about your readers.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-item " data-id="6">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-danger">
+                                                <img src="~/Content/Basik/assets/img/a6.jpg" alt=".">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            Just saw this on the
+                                            <a href='#'>eBay</a> dashboard, dude is an absolute unit.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-item " data-id="1">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-primary">
+                                                <img src="~/Content/Basik/assets/img/a1.jpg" alt=".">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            <a href='#'>WordPress</a> How To Get Started With WordPress
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-item " data-id="17">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-warning">
+                                                A
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            Alibaba made a smart screen
+                                            <a href='#'>Alibaba</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-item " data-id="4">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-success">
+                                                <img src="~/Content/Basik/assets/img/a4.jpg" alt=".">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            Big News! Introducing
+                                            <a href='#'>NextUX</a> Enterprise 2.1 - additional #Windows Server support
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-item " data-id="14">
+                                    <div>
+                                        <a href="#">
+                                            <span class="w-32 avatar gd-warning">
+                                                B
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="item-feed h-2x">
+                                            Do you know which are the popular ones? Leave a comment and get to know more from professional developers
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex px-3 py-2 b-t">
+                            <div class="flex">
+                                <span>6 Notifications</span>
+                            </div>
+                            <a href="page.setting.html">
+                                See all
+                                <i class="fa fa-angle-right text-muted"></i>
+                            </a>
+                        </div>
+                    </div>-->
+                    <!-- / dropdown -->
+                    <!--</li>-->
+                    <!-- User dropdown menu -->
+                    <!--<li class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center px-2 text-color">
+                            <span class="avatar w-24" style="margin: -2px;"><img src="~/Content/Basik/assets/img/a3.jpg" alt="..."></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn">
+                            <a class="dropdown-item" href="page.profile.html">
+                                <span>Jacqueline Reid</span>
+                            </a>
+                            <a class="dropdown-item" href="page.price.html">
+                                <span class="badge bg-success text-uppercase">Upgrade</span>
+                                <span>to Pro</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="page.profile.html">
+                                <span>Profile</span>
+                            </a>
+                            <a class="dropdown-item d-flex" href="page.invoice.html">
+                                <span class="flex">Invoice</span>
+                                <span><b class="badge badge-pill gd-warning">5</b></span>
+                            </a>
+                            <a class="dropdown-item" href="page.faq.html">Need help?</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="page.setting.html">
+                                <span>Account Settings</span>
+                            </a>
+                            <a class="dropdown-item" href="signin.html">Sign out</a>
+                        </div>
+                    </li>-->
+                    <!-- Navarbar toggle btn -->
+                    <li class="nav-item d-lg-none">
+                        <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarToggler">
+                            <i data-feather="search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link px-1" data-toggle="modal" data-target="#aside">
+                            <i data-feather="menu"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ############ Footer END-->
+        <!-- ############ Content START-->
+        <div id="content" class="flex ">
+            <!-- ############ Main START-->
+            @RenderBody()
+            <!-- ############ Main END-->
+        </div>
+        <!-- ############ Content END-->
+        <!-- ############ Footer START-->
+        <div id="footer" class="page-footer hide">
+            <div class="d-flex p-3">
+                <span class="text-sm text-muted flex">&copy; Copyright. flatfull.com</span>
+                <div class="text-sm text-muted">Version 1.1.2</div>
+            </div>
+        </div>
+        <!-- ############ Footer END-->
+    </div>
+
+    <div id="CustomerLabelsModal" class="modal fade">
+        <div class="modal-dialog modal-md text-dark">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title text-white">Nhãn khách hàng</h5>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body scroll-y" style="height: calc(100vh - 10.313rem)">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="SaveCustomerLabels()">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="SearchAndSelectCustomerModal" class="modal fade">
+        <div class="modal-dialog modal-xl text-dark">
+            <div class="modal-content">
+                <div class="modal-header bg-primary p-2">
+                    <h5 class="modal-title text-white">Tìm kiếm khách hàng</h5>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body p-2">
+                    <div class="card mx-0 mx-md-1 mb-0 scroll-y" style="height: 70vh">
+                        <div class="card-body p-2">
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div class="form-row">
+                                        <div class="col-4">
+                                            @Html.TextBox("SM_Keyword", null, new { Placeholder = "Từ khóa", @class = "form-control" })
+                                        </div>
+                                        <div class="col-4">
+                                            <select id="SM_CustomerLables" multiple></select>
+                                        </div>
+                                        <div class="col-2">
+                                            <select id="SM_Type">
+                                                <option value=""></option>
+                                                <option value="Cá nhân">Cá nhân</option>
+                                                <option value="Nhóm">Nhóm</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row mt-1">
+                                        <div class="col-4">
+                                            <select id="SM_Channels" multiple></select>
+                                        </div>
+                                        <div class="col-2">
+                                            Sinh nhật:
+                                        </div>
+                                        <div class="col-3">
+                                            @Html.TextBox("SM_DOBFrom", null, new { @class = "form-control", @type = "date" })
+                                        </div>
+                                        <div class="col-3">
+                                            @Html.TextBox("SM_DOBTo", null, new { @class = "form-control", @type = "date" })
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-row">
+                                        <div class="table-responsive p-3" style="padding-top: 0px !important;">
+                                            <table class="table table-theme table-fixed-head v-middle main-table-custom" id="SearchAndSelectCustomerTable" data-pager="#SearchAndSelectCustomerTablePager">
+                                                <thead>
+                                                    <tr class="table-header-swapper" data-bind-to="#header-to-change" data-item-to-fire=".item-checkbox">
+                                                        <th style="width:20px;" no-swap="true">
+                                                            <label class="ui-check m-0">
+                                                                <input type="checkbox" class="item-total-checkbox" data-bind-to=".item-checkbox">
+                                                                <i></i>
+                                                            </label>
+                                                        </th>
+                                                        <th class="text-muted text-left">Mã</th>
+                                                        <th class="text-muted text-left">Loại</th>
+                                                        <th class="text-muted text-left">Tên</th>
+                                                        <th class="text-muted text-left">Nhãn</th>
+                                                        <th class="text-muted text-left">Điểm chạm</th>
+                                                        <th class="text-muted text-left">Ngày sinh</th>
+                                                        <th class="text-muted text-left">SĐT</th>
+                                                        <th class="text-muted text-left">Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="px-3 py-3 mt-auto">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex d-flex flex-row" id="SearchAndSelectCustomerTablePager">
+                                                </div>
+                                                <div>
+                                                    <span class="text-muted">Tổng số:</span>
+                                                    <span class="table-amount-count">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2 px-md-1 pt-2 mt-auto pb-2 pb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <div class="flex d-flex flex-row">
+                            </div>
+                            <div>
+                                <button class="btn btn-primary mr-2 mb-2 mb-lg-0" type="button" onclick="SearchAndSelectCustomerModal_Confirm()">
+                                    Xác nhận
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- build:js ~/Content/Basik/assets/js/site.min.js -->
+    <!-- jQuery -->
+    <script src="~/Content/Basik/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Content/Basik/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/Basik/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ajax page -->
+    @*<script src="~/Content/Basik/libs/pjax/pjax.min.js"></script>
+        <script src="~/Content/Basik/assets/js/ajax.js"></script>*@
+    <!-- lazyload plugin -->
+    <script src="~/Content/Basik/assets/js/lazyload.config.js"></script>
+    <script src="~/Content/Basik/assets/js/lazyload.js"></script>
+    <script src="~/Content/Basik/assets/js/plugin.js"></script>
+    <!-- scrollreveal -->
+    <script src="~/Content/Basik/libs/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- feathericon -->
+    <script src="~/Content/Basik/libs/feather-icons/dist/feather.min.js"></script>
+    <script src="~/Content/Basik/assets/js/plugins/feathericon.js"></script>
+    <!-- theme -->
+    <script src="~/Content/Basik/assets/js/theme.js"></script>
+    <script src="~/Content/Basik/assets/js/utils.js"></script>
+    <!-- endbuild -->
+
+    <script src="~/Content/waitMe/waitMe.js"></script>
+    <script src="~/Content/toastr/toastr.min.js"></script>
+    <script src="~/Content/select2/dist/js/select2.full.js"></script>
+    <script src="~/Content/select2/dist/js/i18n/vi.js"></script>
+    <script src="~/Content/moment/moment.min.js"></script>
+    <script src="~/Content/moment/moment-with-locales.min.js"></script>
+    <script src="~/Content/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <script src="~/Scripts/list.js"></script>
+    <script src="~/Scripts/table.js"></script>
+    <script src="~/Scripts/checkbox.js"></script>
+    <script src="~/Scripts/alert.js"></script>
+
+    <script>
+        var loadingElement = "";
+        function showLoading(whereEle) {
+            hideLoading();
+            if (whereEle == null || whereEle == "") {
+                whereEle = "#content";
+                if ($(whereEle).length == 0) {
+                    whereEle = "#content";
+                }
+            }
+
+            loadingElement = whereEle;
+            $(whereEle).waitMe({
+                effect: 'bounce',
+                text: 'Vui lòng đợi',
+                color: "#448bff"
+            });
+        }
+
+        function hideLoading() {
+            $(loadingElement).waitMe("hide");
+        }
+
+        function activeMenu(id) {
+            $(id).addClass("active");
+        }
+
+        function NewGUI() {
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+                (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+            );
+        }
+
+        // mở pop-up quản lý nhãn khách hàng
+        OpenCustomerLabelsModal = function () {
+            showLoading();
+            $.ajax({
+                url: "/Org/GetCustomerLabels",
+                method: "GET",
+                accepts: "application/json",
+                success: function (response) {
+                    hideLoading();
+                    $('#CustomerLabelsModal .modal-body').html(response);
+                    $('#CustomerLabelsModal').modal('toggle');
+                },
+                error: function (response, status, xhr) {
+                    toastr.error(response.statusText)
+                    hideLoading();
+                }
+            });
+        }
+
+        SaveCustomerLabels = function () {
+            //hàm lấy danh sách trong pop-up
+            var list = GetCustomerLabels();
+
+            showLoading();
+            $.ajax({
+                url: "/Org/SaveCustomerLabels",
+                method: "POST",
+                data: {
+                    list: list
+                },
+                accepts: "application/json",
+                success: function (data) {
+                    hideLoading();
+                    if (data.Success) {
+                        $('#CustomerLabelsModal .modal-body').empty();
+                        $('#CustomerLabelsModal').modal('toggle');
+                    } else {
+                        toastr.error(data.Message)
+                    }
+                },
+                error: function (response, status, xhr) {
+                    toastr.error(response.statusText)
+                    hideLoading();
+                },
+            });
+        }
+
+        $("#S_Keyword").keypress(
+            function (event) {
+                if (event.which == '13') {
+                    event.preventDefault();
+                    Search()
+                }
+            });
+
+        $("#SearchAndSelectCustomerModal #SM_Keyword").keypress(
+            function (event) {
+                if (event.which == '13') {
+                    event.preventDefault();
+                    SearchAndSelectCustomerModal_Search()
+                }
+            });
+
+        $('#SM_Type').select2({ placeholder: "Chọn loại", allowClear: true, width: '100%', dropdownAutoWidth: true })
+
+        $('#SM_Channels').select2({
+            placeholder: "Chọn kênh",
+            allowClear: true,
+            ajax: {
+                url: '/Channel/SearchChannel',
+                data: function (params) {
+                    var query = {
+                        keyword: params.term,
+                        pageIndex: params.page || 1,
+                        pageSize: 20
+                    }
+                    return query;
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    var results = data.Data.map((item, index) => {
+                        return {
+                            id: item.Code,
+                            text: item.Name
+                        }
+                    })
+                    return {
+                        results: results,
+                        pagination: {
+                            more: (params.page * 20) < data.Total
+                        }
+                    };
+                },
+            },
+        });
+
+        $('#SM_CustomerLables').select2({
+            placeholder: "Chọn nhãn khách hàng",
+            allowClear: true,
+            ajax: {
+                url: '/Org/SearchCustomerLabels',
+                data: function (params) {
+                    var query = {
+                        keyword: params.term,
+                        pageIndex: params.page || 1,
+                        pageSize: 20
+                    }
+                    return query;
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    var results = data.Data.map((item, index) => {
+                        return {
+                            id: item,
+                            text: item
+                        }
+                    })
+                    return {
+                        results: results,
+                        pagination: {
+                            more: (params.page * 20) < data.Total
+                        }
+                    };
+                },
+            },
+        });
+
+        ListSelectedCustomer = []
+        function OpenSearchAndSelectCustomerModal() {
+            ListSelectedCustomer = [];
+            $('#SearchAndSelectCustomerModal #SM_Keyword').val("");
+            $('#SearchAndSelectCustomerModal #SM_CustomerLables').val(null).trigger("change.select2");
+            $('#SearchAndSelectCustomerModal #SM_Type').val(null).trigger("change.select2");
+            $('#SearchAndSelectCustomerModal #SM_Channels').val(null).trigger("change.select2");
+            $('#SearchAndSelectCustomerModal #SM_DOBFrom').val(null);
+            $('#SearchAndSelectCustomerModal #SM_DOBTo').val(null);
+            $('#SearchAndSelectCustomerModal').modal('show');
+
+
+            $(document).on("change", "#SearchAndSelectCustomerModal #SM_Keyword, #SearchAndSelectCustomerModal #SM_CustomerLables,"
+                + "#SearchAndSelectCustomerModal #SM_Type, #SearchAndSelectCustomerModal #SM_Channels,"
+                + "#SearchAndSelectCustomerModal #SM_DOBFrom, #SearchAndSelectCustomerModal #SM_DOBTo", function () {
+                    SearchAndSelectCustomerModal_Search();
+                });
+
+            setTimeout(SearchAndSelectCustomerModal_Search(), 1000);
+        }
+
+        function CloseSearchAndSelectCustomerModal() {
+            $('#SearchAndSelectCustomerModal').modal('hide');
+        }
+
+        function SearchAndSelectCustomerModal_Search(pageIndex) {
+            showLoading(".modal-content");
+            var body = {
+                Keyword: $('#SearchAndSelectCustomerModal #SM_Keyword').val(),
+                PageIndex: pageIndex || 1,
+                PageSize: 10,
+                Model: {
+                    Labels: $("#SearchAndSelectCustomerModal #SM_CustomerLables").val(),
+                    Type: $("#SearchAndSelectCustomerModal #SM_Type").val(),
+                    Channels: $("#SearchAndSelectCustomerModal #SM_Channels").val(),
+                    DOBFrom: $("#SearchAndSelectCustomerModal #SM_DOBFrom").val(),
+                    DOBTo: $("#SearchAndSelectCustomerModal #SM_DOBTo").val(),
+                }
+            };
+            $.ajax({
+                url: "/Customer/_PopupList",
+                data: body,
+                method: "POST",
+                accepts: "application/json",
+                success: function (result) {
+                    hideLoading();
+                    $("#SearchAndSelectCustomerTable").find('tbody').html(result);
+                    BindSelectedCustomer()
+                },
+                error: function () {
+                    hideLoading();
+                }
+            });
+        }
+
+        function BindSelectedCustomer() {
+            $("#SearchAndSelectCustomerModal .item-checkbox").each(function (index, ele) {
+                var customerId = $(ele).attr("item-id");
+                var selected = ListSelectedCustomer.find(ele => ele.Id == customerId);
+                if (selected) {
+                    $(ele).prop("checked", true);
+                } else {
+                    $(ele).prop("checked", false);
+                }
+            })
+        }
+
+        $(document).on("change", "#SearchAndSelectCustomerModal .item-checkbox", function () {
+            var customerId = $(this).attr("item-id")
+            if (!customerId) {
+                return;
+            }
+
+            var selected = ListCustomer.find(ele => ele.Id == customerId);
+            if (selected && ListSelectedCustomer.indexOf(selected) != -1) {
+                ListSelectedCustomer.splice(ListSelectedCustomer.indexOf(selected), 1);
+            }
+
+            if ($(this).prop("checked")) {
+                ListSelectedCustomer.push(selected);
+            }
+        });
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

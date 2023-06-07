@@ -1,0 +1,57 @@
+[
+  {
+    "ThoiGian": "2023-05-17T10:48:24.8504225+07:00",
+    "MaThietBi": "key12",
+    "MaCauHinh": "configId1",
+    "UngDung": "app1",
+    "TaiKhoan": "accoun1t",
+    "Nhip": "cade1",
+    "DanhSachChay": "1|2|312",
+    "DanhSachChayThanhCong": "321",
+    "DanhSachChayThatBai": "1|2|312"
+  },
+  {
+    "ThoiGian": "2023-05-17T10:47:24.2737703+07:00",
+    "MaThietBi": "key12",
+    "MaCauHinh": "configId1",
+    "UngDung": "app1",
+    "TaiKhoan": "accoun1t",
+    "Nhip": "cade",
+    "DanhSachChay": "1|2|3",
+    "DanhSachChayThanhCong": "3",
+    "DanhSachChayThatBai": "1|2"
+  },
+  {
+    "ThoiGian": "2023-05-17T10:47:17.7847817+07:00",
+    "MaThietBi": "key12",
+    "MaCauHinh": "configId1",
+    "UngDung": "app1",
+    "TaiKhoan": "account",
+    "Nhip": "cade",
+    "DanhSachChay": "1|2|3",
+    "DanhSachChayThanhCong": "3",
+    "DanhSachChayThatBai": "1|2"
+  },
+  {
+    "ThoiGian": "2023-05-17T10:47:13.3722431+07:00",
+    "MaThietBi": "key12",
+    "MaCauHinh": "configId1",
+    "UngDung": "app",
+    "TaiKhoan": "account",
+    "Nhip": "cade",
+    "DanhSachChay": "1|2|3",
+    "DanhSachChayThanhCong": "3",
+    "DanhSachChayThatBai": "1|2"
+  },
+  {
+    "ThoiGian": "2023-05-17T10:46:50.7008093+07:00",
+    "MaThietBi": "key12",
+    "MaCauHinh": "configId",
+    "UngDung": "app",
+    "TaiKhoan": "account",
+    "Nhip": "cade",
+    "DanhSachChay": "1|2|3",
+    "DanhSachChayThanhCong": "3",
+    "DanhSachChayThatBai": "1|2"
+  }
+]

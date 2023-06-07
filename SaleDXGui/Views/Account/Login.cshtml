@@ -1,0 +1,160 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng nhập</title>
+    <meta name="description" content="Responsive, Bootstrap, BS4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- style -->
+    <!-- build:css ../assets/css/site.min.css -->
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/Basik/assets/css/style.css" type="text/css" />
+    <!-- endbuild -->
+    <link href="~/Content/waitMe/waitMe.css" rel="stylesheet" />
+    <link href="~/Content/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/select2/dist/css/select2.css" rel="stylesheet" />
+</head>
+<body class="layout-row">
+    <div class="d-flex flex-column flex">
+        <div class="row no-gutters h-100">
+            <div class="col-md-6 bg-primary" style="">
+                <div class="p-3 p-md-5 d-flex flex-column h-100">
+                    <h4 class="mb-3 text-white">SaleDX</h4>
+                    <div class="text-fade">Nhân bản đội sale</div>
+                    <div class="d-flex flex align-items-center justify-content-center">
+                    </div>
+                    <div class="d-flex text-sm text-fade">
+                        @*<a href="index.html" class="text-white">About</a>*@
+                        <span class="flex"></span>
+                        @*<a href="#" class="text-white mx-1">Terms</a>*@
+                        @*<a href="#" class="text-white mx-1">Policy</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="content-body">
+                    <div class="p-3 p-md-5">
+                        <h5>Chào mừng bạn đến với SaleDX</h5>
+                        <p>
+                            <small class="text-muted">Đăng nhập để quản lý tài khoản của bạn</small>
+                        </p>
+                        <form id="LoginForm" class="" role="form" method="post" data-plugin="parsley" data-option="{}" action="/Account/Login">
+                            <div class="form-group">
+                                <label>Mã đơn vị</label>
+                                <input name="OrgCode" type="text" class="form-control" placeholder="Nhập mã đơn vị" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tài khoản</label>
+                                <input name="Account" type="text" class="form-control" placeholder="Nhập tài khoản" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu</label>
+                                <input name="Password" type="password" class="form-control" placeholder="Nhập mật khẩu" required>
+                                @*<div class="my-3 text-right">
+                                        <a href="forgot-password.html" class="text-muted">Forgot password?</a>
+                                    </div>*@
+                            </div>
+                            @*<div class="checkbox mb-3">
+                                    <label class="ui-check">
+                                        <input type="checkbox">
+                                        <i></i> Remember me
+                                    </label>
+                                </div>*@
+                            <button type="submit" class="btn btn-primary mb-4">Đăng nhập</button>
+                            @*<div>
+                                    Do not have an account?
+                                    <a href="signup.html" class="text-primary">Sign up</a>
+                                </div>*@
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- build:js ../assets/js/site.min.js -->
+    <!-- jQuery -->
+    <script src="~/Content/Basik/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Content/Basik/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Content/Basik/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ajax page -->
+    <script src="~/Content/Basik/libs/pjax/pjax.min.js"></script>
+    <script src="~/Content/Basik/assets/js/ajax.js"></script>
+    <!-- lazyload plugin -->
+    <script src="~/Content/Basik/assets/js/lazyload.config.js"></script>
+    <script src="~/Content/Basik/assets/js/lazyload.js"></script>
+    <script src="~/Content/Basik/assets/js/plugin.js"></script>
+    <!-- scrollreveal -->
+    <script src="~/Content/Basik/libs/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- feathericon -->
+    <script src="~/Content/Basik/libs/feather-icons/dist/feather.min.js"></script>
+    <script src="~/Content/Basik/assets/js/plugins/feathericon.js"></script>
+    <!-- theme -->
+    <script src="~/Content/Basik/assets/js/theme.js"></script>
+    <script src="~/Content/Basik/assets/js/utils.js"></script>
+    <!-- endbuild -->
+
+    <script src="~/Content/waitMe/waitMe.js"></script>
+    <script src="~/Content/toastr/toastr.min.js"></script>
+    <script src="~/Content/select2/dist/js/select2.full.js"></script>
+    <script src="~/Content/select2/dist/js/i18n/vi.js"></script>
+    <script src="~/Content/moment/moment.min.js"></script>
+    <script src="~/Content/moment/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+
+    <script>
+        var loadingElement = "";
+        function showLoading(whereEle) {
+            hideLoading();
+            if (whereEle == null || whereEle == "") {
+                whereEle = "#content-body";
+                if ($(whereEle).length == 0) {
+                    whereEle = "#content-body";
+                }
+            }
+
+            loadingElement = whereEle;
+            $(whereEle).waitMe({
+                effect: 'bounce',
+                text: 'Vui lòng đợi',
+                color: "#448bff"
+            });
+        }
+
+        function hideLoading() {
+            $(loadingElement).waitMe("hide");
+        }
+
+        $('#LoginForm').ajaxForm({
+            beforeSend: function (arr, $form, options) {
+                showLoading()
+            },
+            beforeSubmit: function (formData, jqForm, options) {
+                $('#LoginForm').parsley().isValid()
+            },
+            error: function (response, status, xhr) {
+                hideLoading()
+                toastr.error(response.statusText)
+            },
+            success: function (data, status, xhr, $el) {
+                hideLoading()
+                if (data.Success) {
+                    toastr.success(data.Message)
+                    setTimeout(function () {
+                        location.href = "/"
+                    }, 500)
+                } else {
+                    toastr.error(data.Message)
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

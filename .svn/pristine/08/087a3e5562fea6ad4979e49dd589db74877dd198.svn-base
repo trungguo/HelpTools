@@ -1,0 +1,105 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Web;
+
+namespace Textpad.Helpers
+{
+    public static class FileHelper
+    {
+        public static T GetDataFromPath<T>(string path)
+        {
+            try
+            {
+                var file = File.ReadAllText(path);
+                var data = JsonConvert.DeserializeObject<T>(file);
+
+                if (data == null)
+                {
+                    return (T)Activator.CreateInstance(typeof(T));
+                }
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return (T)Activator.CreateInstance(typeof(T));
+            }
+        }
+
+        public static string GetStringFromPath(string path)
+        {
+            try
+            {
+                var str = File.ReadAllText(path);
+                return str;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public static void AppendToFile(string path, string content)
+        {
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(content);
+            }
+        }
+
+        public static void ClearFileContent(string path)
+        {
+            File.WriteAllText(path, string.Empty);
+        }
+
+        public static string GetFileFromUri(string uri, string savePath)
+        {
+            try
+            {
+                WebClient client = new WebClient();
+                client.DownloadFile(new Uri(uri), savePath);
+                return savePath;
+            }
+            catch (Exception e)
+            {
+                return string.Empty;
+            }
+        }
+
+        public static List<string> FindAllFileByUID(string path, string uid)
+        {
+            try
+            {
+                var filesInDir = Directory.GetFiles(path, uid + "*");
+                return filesInDir?.ToList();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path">@"c:\"</param>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        public static string FindOneFileByUID(string path, string uid)
+        {
+            try
+            {
+                var filesInDir = Directory.GetFiles(path, uid + "*");
+                return filesInDir?.FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                return string.Empty;
+            }
+        }
+    }
+}

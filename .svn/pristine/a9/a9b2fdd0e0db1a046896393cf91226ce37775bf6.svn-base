@@ -1,0 +1,392 @@
+--toast("hien dau",5)
+--alert("f1plus nay no lam")
+
+--copyText("cong hoa xa hoi")
+--toast(clipText(),30)
+
+--toast("day la serial "..getSN())
+
+--inputText("nhap lai thong tin ")
+
+--inputText("chuỗi thông tin này đưa và \n lại xuống dòng")
+
+--openURL("https://f1plus.vn")
+
+--tap(400,300)
+
+--toast(getColor(100,300),8)
+--screenshot(); --cmeraroll 
+--screenshot("/var/mobile/Library/AutoTouch/Scripts/screen1.png");
+
+
+--screenshot("/var/mobile/Library/AutoTouch/Scripts/screen2.png",{10,10,100,200});
+
+
+--usleep(2000000)
+
+--icon_cydia=findColors({{7290925,0,0}, {6567463,23,14}, {6567719,62,13}, {7159340,83,2}, {16777215,29,-25}, {16777215,44,-19}, {16777215,62,-25}, {16777215,51,-35}, {16777215,66,-42}}, 0, nil);
+
+--for i, v in pairs(icon_cydia) do
+-- tap(v[1],v[2]); usleep(1000000);
+--end
+
+--[[
+appRun("com.facebook.Facebook"); usleep(3000000);
+
+for i, v in pairs(findImage("Screenshots/PhoneNumber.PNG", 2, 0.98, nill,nill)) do 
+	tap(v[1],v[2]); usleep(math.random(1000000,3000000))
+	inputText("100090346114877"); usleep(math.random(1000000,3000000));
+	break;
+end;
+
+
+for i, v in pairs(findImage("Screenshots/Password.PNG", 2, 0.98, nill,nill)) do 
+	tap(v[1],v[2]); usleep(math.random(1000000,3000000))
+	inputText("QuocThienpob"); usleep(math.random(1000000,3000000));
+	break;
+end;
+
+
+for i, v in pairs(findImage("Screenshots/LoginButton.PNG", 2, 0.98, nill,nill)) do 
+	tap(v[1],v[2]); usleep(math.random(1000000,3000000))
+	toast("login acc 100090346114877");
+	break;
+end;
+]]
+--100005666854300
+
+--[[
+openURL("fb://groups")
+--openURL("fb://notifications");
+openURL("fb://friends");
+
+openURL("fb://profile/100005666854300")
+openURL("fb://feed")
+
+]]
+
+
+
+
+function Scroll_AddFriend()
+	touchDown(6, 453.67, 1066.43);
+	usleep(66335.79);
+	touchMove(6, 444.43, 1047.09);
+	usleep(16872.92);
+	touchMove(6, 444.43, 1020.61);
+	usleep(16554.92);
+	touchMove(6, 444.43, 982.95);
+	usleep(16483.62);
+	touchMove(6, 445.45, 931.03);
+	usleep(16891.38);
+	touchMove(6, 451.61, 877.07);
+	usleep(16311.58);
+	touchMove(6, 458.79, 819.03);
+	usleep(16868.21);
+	touchMove(6, 467.01, 749.78);
+	usleep(16698.67);
+	touchMove(6, 475.22, 698.88);
+	usleep(16542.71);
+	touchMove(6, 483.43, 641.86);
+	usleep(16562.38);
+	touchMove(6, 489.59, 594.01);
+	usleep(16838.04);
+	touchMove(6, 493.70, 561.44);
+	usleep(16687.79);
+	touchMove(6, 495.75, 536.99);
+	usleep(16448.04);
+	touchMove(6, 496.78, 520.71);
+	usleep(17002.58);
+	touchMove(6, 497.80, 509.51);
+	usleep(16477.33);
+	touchMove(6, 497.80, 503.41);
+	usleep(16531.88);
+	touchMove(6, 497.80, 502.39);
+	usleep(83767.92);
+	touchMove(6, 497.80, 503.41);
+	usleep(16728.96);
+	touchMove(6, 497.80, 504.42);
+	usleep(16426.12);
+	touchMove(6, 497.80, 505.44);
+	usleep(16650.88);
+	touchMove(6, 497.80, 506.46);
+	usleep(17209.79);
+	touchMove(6, 497.80, 507.48);
+	usleep(16180.21);
+	touchMove(6, 497.80, 511.55);
+	usleep(15165.83);
+	touchUp(6, 500.87, 515.62);
+	usleep(15165.83);
+	end;
+
+function AddFriend_Button()
+	for i, v in pairs(findImage("Screenshots/AddFriends_Add.PNG", 2, 0.98, nill,nill)) do 
+			tap(v[1],v[2]); usleep(math.random(3000000,5000000))
+			break;
+	end;	
+	
+	 usleep(math.random(1000000,3000000))
+end;
+
+
+
+
+function AddFriends()
+	openURL("fb://friends");
+	 usleep(math.random(1000000,3000000))
+
+	for i, v in pairs(findImage("Screenshots/AddFriends_Recent.PNG", 2, 0.98, nill,nill)) do 
+		tap(685,87); usleep(math.random(1000000,3000000))
+		break;
+	end;
+
+
+	num_addfriend=2;
+	num_addfriend=tonumber(num_addfriend);
+
+	for rtx = 1, num_addfriend do 
+		toast("acc (9) addfriend suggest "..rtx.."/"..num_addfriend,5);
+		log("acc (9) addfriend suggest "..rtx.."/"..num_addfriend);
+			--scroll
+		Scroll_AddFriend();
+		for i, v in pairs(findImage("Screenshots/AddFriends_Add.PNG", 2, 0.98, nill,nill)) do 
+			tap(v[1],v[2]); usleep(math.random(1000000,3000000))
+			break;
+		end;	
+		 usleep(math.random(1000000,3000000))
+	end; --for rtx = 1, 5 do
+end;
+
+function tapButton()
+end;
+
+--AddFriends();
+function ScrollOnNewsFeed()
+	touchDown(4, 500.87, 1125.48);
+	usleep(51390.38);
+	touchMove(4, 490.61, 1122.43);
+	usleep(16199.25);
+	touchMove(4, 489.59, 1106.14);
+	usleep(16951.62);
+	touchMove(4, 483.43, 1077.63);
+	usleep(16822.46);
+	touchMove(4, 478.29, 1031.81);
+	usleep(16203.33);
+	touchMove(4, 475.22, 983.97);
+	usleep(16738.08);
+	touchMove(4, 474.19, 936.12);
+	usleep(16955.17);
+	touchMove(4, 474.19, 889.28);
+	usleep(16845.04);
+	touchMove(4, 474.19, 840.41);
+	usleep(16342.83);
+	touchMove(4, 473.17, 788.48);
+	usleep(16645.92);
+	touchMove(4, 473.17, 735.54);
+	usleep(16437.00);
+	touchMove(4, 473.17, 685.65);
+	usleep(16726.54);
+	touchMove(4, 473.17, 637.79);
+	usleep(16909.38);
+	touchMove(4, 473.17, 590.95);
+	usleep(16532.67);
+	touchMove(4, 476.25, 554.31);
+	usleep(16729.17);
+	touchMove(4, 480.35, 516.64);
+	usleep(16639.83);
+	touchMove(4, 484.45, 488.14);
+	usleep(16396.71);
+	touchMove(4, 487.53, 458.60);
+	usleep(16737.04);
+	touchMove(4, 489.59, 438.25);
+	usleep(16701.25);
+	touchMove(4, 491.64, 419.91);
+	usleep(16550.25);
+	touchMove(4, 492.67, 406.68);
+	usleep(16784.54);
+	touchMove(4, 492.67, 392.43);
+	usleep(16844.79);
+	touchMove(4, 492.67, 383.27);
+	usleep(16434.29);
+	touchMove(4, 492.67, 376.14);
+	usleep(16720.12);
+	touchMove(4, 492.67, 369.00);
+	usleep(16767.33);
+	touchMove(4, 492.67, 365.95);
+	usleep(16682.54);
+	touchMove(4, 492.67, 364.93);
+	usleep(16818.29);
+	touchMove(4, 492.67, 363.91);
+	usleep(133425.21);
+	touchUp(4, 489.59, 358.82);
+	usleep(133425.21);
+end;
+
+
+function NewsFeed_ReactRandom()
+	
+--cuon luot xuong de tim 
+ScrollOnNewsFeed();
+
+
+for i, v in pairs(findImage("Screenshots/NewsFeed_React_Like.PNG", 2, 0.98, nill,nill)) do 
+	touchDown(3,v[1],v[2])
+	usleep(716128.67);
+	touchUp(3, v[1],v[2])
+	usleep(2000000);
+	
+	
+	for i, v in pairs(findImage("Screenshots/NewsFeed_React_LoveAction.PNG", 2, 0.98, nill,nill)) do 
+	toast("Tim thay nut Love");
+--[[
+		RegionReactX = {100-math.random(5,20),200-math.random(5,20),300-math.random(5,20)}; -- nut like bắt đầu từ 100, bù trừ khoảng cách
+			usleep(100000);  --400-math.random(5,20)};
+		RegionReactX = RegionReactX[math.random(1, #RegionReactX)]; --#RegionRectX length của table
+			usleep(100000);
+		RegionReactY = {v[2]-math.random(5,45)};
+		usleep(100000);      
+		tap(RegionReactX, RegionReactY);     usleep(300000); 
+		]]
+		RegionReactX = {100-math.random(5,20),200-math.random(5,20),300-math.random(5,20)};usleep(100000);  --400-math.random(5,20)};
+		RegionReactX = RegionReactX[math.random(1, #RegionReactX)] ;usleep(100000);
+	    RegionReactY = {v[2]-math.random(5,45)};RegionReactY = RegionReactY[math.random(1, #RegionReactY)]; usleep(100000);      
+		tap(RegionReactX, RegionReactY);     usleep(300000); 
+	
+	end;--LikeNewsfeed.NewsFeed_React_LoveAction.png
+
+	--usleep(math.random(1000000,3000000))
+	break;
+end;	
+end;
+
+--openURL("fb://feed");usleep(5000000);
+
+
+openURL("fb://profile/1367541565");usleep(5000000);
+
+
+num_react_newsfeed = 10
+for ctx = 1, num_react_newsfeed do 
+NewsFeed_ReactRandom();
+toast("acc (9/20) dang chay "..ctx.."/"..num_react_newsfeed,10);
+
+end;--loop
+
+--[[
+toast(os.time());
+N2FA ="R6VUWRRAR2MCLB5DH4I4W3HN24DNVHKG";
+url = "https://2fa.live/token="..N2FA;
+body,code = require("socket.http").request(url); usleep(5000000);
+if code == 200 and body ~= nil then 
+	Json = require("json").decode(body);
+	code2fa=Json.token
+	toast(code2fa);
+else
+	toast("lấy 2fa không thành công"); code2fa="999999" 
+end;
+
+]]
+
+
+
+
+
+
+--[[
+
+ 
+
+function split(string, phancach);resultZ = {};;for match in (string..phancach):gmatch("(.-)"..phancach) do;table.insert(resultZ, match);end;return resultZ;end
+
+function Readfile(pathfile);local f = io.open(pathfile, "rb"); local nameY = f:read("*all"); f:close();return nameY;end;--function GR(T)
+
+function Writefile(pathfile,content);if content ~= nil then;local f = io.open(pathfile, "w");f:write(content);f:close();usleep(10000);else;end;end;--function AW(T,content)
+
+function Writefile_join(pathfile,content);if content ~= nil then;local f = io.open(pathfile, "a+");f:write(content);f:close();usleep(10000);else;end;end;--function AW(T,content)
+
+function CountLine(pathfile);local f=io.open(pathfile,"r");if f~=nil then io.close(f);sodong = 0;for i in io.lines(pathfile) do;sodong = sodong + 1;end;return sodong;else;return toast("file không tồn tại:\n"..pathfile,100) end;end
+
+
+
+File2Table = require("pl.utils").readlines("/var/mobile/Library/AutoTouch/Scripts/ACC.txt");
+
+Writefile("/var/mobile/Library/AutoTouch/Scripts/GONE.txt"," ")
+Writefile("/var/mobile/Library/AutoTouch/Scripts/LIVE.txt"," ")
+
+for ctx=1,#File2Table do 
+	toast(ctx.."/"..#File2Table,5);
+	split(File2Table[ctx],"|") --dongf
+	UID = resultZ[1] ; --toast(UID,5);
+
+	--UID = "100090248980812"
+	url = "https://graph.facebook.com/"..UID.."/picture"
+	body, code = require("socket.http").request(url)
+	if  body == nil or string.len(body) > 390 then  
+		toast("\n ACC LIVE : "..UID,10)
+      if string.len(Readfile("/var/mobile/Library/AutoTouch/Scripts/LIVE.txt")) < 10 then
+			Writefile("/var/mobile/Library/AutoTouch/Scripts/LIVE.txt",File2Table[ctx])
+			 else
+			oldcontent = Readfile("/var/mobile/Library/AutoTouch/Scripts/LIVE.txt")
+			Writefile("/var/mobile/Library/AutoTouch/Scripts/LIVE.txt",oldcontent.."\n"..File2Table[ctx])
+			end;
+
+	else                         
+		toast("\n ACC ĐÃ BAY: "..UID,10)
+      if string.len(Readfile("/var/mobile/Library/AutoTouch/Scripts/GONE.Txt")) < 10 then
+			Writefile("/var/mobile/Library/AutoTouch/Scripts/GONE.txt",File2Table[ctx])
+			 else
+			oldcontent = Readfile("/var/mobile/Library/AutoTouch/Scripts/GONE.txt")
+			Writefile("/var/mobile/Library/AutoTouch/Scripts/GONE.txt",oldcontent.."\n"..File2Table[ctx])
+			end;
+		
+	end;
+
+
+	usleep(100000);
+end
+
+ ]]
+
+ 
+
+ 
+
+
+
+
+
+
+function checkLiveFb()
+	UID = "100000169556307"  --AcCC LIVE
+	UID = "100059561201355"  --ACC GONE
+	body, code = require("ssl.https").request('https://graph.facebook.com/'..UID..'/picture')
+	if code == 200 and body ~= nil and string.len(body) == 390 then 
+		body2, code2 = require("ssl.https").request('https://facebook.com/'..UID..'')
+		if code2 == 200 and body2 ~= nil and string.len(body2) > 190000 then UIDX = "1037711852"; else;end;
+		body, code = require("ssl.https").request('https://graph.facebook.com/'..UID..'/picture')
+	end;--if body == "GIF89a2" then 
+		
+	if	body == nil or string.len(body) > 390 then	toast("ACC LIVE",10)					
+	else
+		toast("ACC GONE",10)
+	end;
+
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

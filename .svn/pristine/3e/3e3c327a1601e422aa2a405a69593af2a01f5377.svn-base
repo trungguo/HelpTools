@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Style | Basik - Bootstrap 4 Web Application</title>
+        <meta name="description" content="Responsive, Bootstrap, BS4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- style -->
+        <!-- build:css ../assets/css/site.min.css -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+        <!-- endbuild -->
+    </head>
+    <body class="layout-row">
+        <!-- ############ Aside START-->
+        <div id="aside" class="page-sidenav no-shrink bg-light nav-dropdown fade" aria-hidden="true">
+            <div class="sidenav h-100 modal-dialog bg-light">
+                <!-- sidenav top -->
+                <div class="navbar">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand ">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x ">Basik</span>
+                    </a>
+                    <!-- / brand -->
+                </div>
+                <!-- Flex nav content -->
+                <div class="flex scrollable hover">
+                    <div class="nav-active-text-primary" data-nav>
+                        <ul class="nav bg">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Main</span>
+                            </li>
+                            <li>
+                                <a href="dashboard.html">
+                                    <span class="nav-icon text-primary"><i data-feather='home'></i></span>
+                                    <span class="nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Applications</span>
+                            </li>
+                            <li>
+                                <a href="app.calendar.html">
+                                    <span class="nav-icon text-info"><i data-feather='calendar'></i></span>
+                                    <span class="nav-text">Calendar</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-danger"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.user.html">
+                                    <span class="nav-icon text-success"><i data-feather='users'></i></span>
+                                    <span class="nav-text">Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.message.html">
+                                    <span class="nav-icon text-warning"><i data-feather='message-circle'></i></span>
+                                    <span class="nav-text">Messages</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-warning"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.mail.html">
+                                    <span class="nav-icon text-danger"><i data-feather='mail'></i></span>
+                                    <span class="nav-text">Email</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav ">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">UI elements</span>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='grid'></i></span>
+                                    <span class="nav-text">Components</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="ui.alert.html" class="">
+                                            <span class="nav-text">Alert</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.badge.html" class="">
+                                            <span class="nav-text">Badge</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.button.html" class="">
+                                            <span class="nav-text">Button</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.card.html" class="">
+                                            <span class="nav-text">Card</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.carousel.html" class="">
+                                            <span class="nav-text">Carousel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.color.html" class="">
+                                            <span class="nav-text">Color</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.dropdown.html" class="">
+                                            <span class="nav-text">Dropdown</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.grid.html" class="">
+                                            <span class="nav-text">Grid</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.icon.html" class="">
+                                            <span class="nav-text">Icon</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.list.html" class="">
+                                            <span class="nav-text">List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.modal.html" class="">
+                                            <span class="nav-text">Modal</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.navbar.html" class="">
+                                            <span class="nav-text">Navbar</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.sidenav.html" class="">
+                                            <span class="nav-text">Sidenav</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.timeline.html" class="">
+                                            <span class="nav-text">Timeline</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.tab.html" class="">
+                                            <span class="nav-text">Tab &amp; Collpase</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.tooltip.html" class="">
+                                            <span class="nav-text">Tooltip &amp; Popover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='box'></i></span>
+                                    <span class="nav-text">Plugins</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="ui.scroll.html" class="">
+                                            <span class="nav-text">Infinite Scroll</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.sortable.html" class="">
+                                            <span class="nav-text">Sortable</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.map.html" class="">
+                                            <span class="nav-text">Vector Map</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='disc'></i></span>
+                                    <span class="nav-text">Form</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="form.element.html" class="">
+                                            <span class="nav-text">Form Element</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.layout.html" class="">
+                                            <span class="nav-text">Form Layout</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.validation.html" class="">
+                                            <span class="nav-text">Form Validation</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.editor.html" class="">
+                                            <span class="nav-text">Editor</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.datepicker.html" class="">
+                                            <span class="nav-text">Datepicker</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.select.html" class="">
+                                            <span class="nav-text">Select</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.wizard.html" class="">
+                                            <span class="nav-text">Wizard</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.dropzone.html" class="">
+                                            <span class="nav-text">File Upload</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='list'></i></span>
+                                    <span class="nav-text">Tables</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="table.style.html" class="">
+                                            <span class="nav-text">Style</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="table.bootstrap.html" class="">
+                                            <span class="nav-text">Bootstrap Table</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="table.datatables.html" class="">
+                                            <span class="nav-text">Datatables</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='pie-chart'></i></span>
+                                    <span class="nav-text">Charts</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="chart.apex.html" class="">
+                                            <span class="nav-text">Apexchart</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="chart.chartist.html" class="">
+                                            <span class="nav-text">Chartist</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="chart.chartjs.html" class="">
+                                            <span class="nav-text">Chartjs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Extra</span>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='file'></i></span>
+                                    <span class="nav-text">Pages</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="page.profile.html" class="">
+                                            <span class="nav-text">Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.search.html" class="">
+                                            <span class="nav-text">Search</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.invoice.html" class="">
+                                            <span class="nav-text">Invoice</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.faq.html" class="">
+                                            <span class="nav-text">FAQ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.price.html" class="">
+                                            <span class="nav-text">Price</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.setting.html" class="">
+                                            <span class="nav-text">Setting</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.blank.html" class="">
+                                            <span class="nav-text">Blank</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='lock'></i></span>
+                                    <span class="nav-text">Auth</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="signin.html" class="">
+                                            <span class="nav-text">Signin</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="signup.html" class="">
+                                            <span class="nav-text">Signup</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="forgot-password.html" class="">
+                                            <span class="nav-text">Forgot Password</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="lockme.html" class="">
+                                            <span class="nav-text">Lockme Screen</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="">
+                                            <span class="nav-text">Error 404</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="505.html" class="">
+                                            <span class="nav-text">Error 505</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- sidenav bottom -->
+                <div class="no-shrink ">
+                    <div class="p-3 d-flex align-items-center">
+                        <div class="text-sm hidden-folded text-muted">
+                            Trial: 35%
+                        </div>
+                        <div class="progress mx-2 flex" style="height:4px;">
+                            <div class="progress-bar gd-success" style="width: 35%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Aside END-->
+        <div id="main" class="layout-column flex">
+            <!-- ############ Header START-->
+            <div id="header" class="page-header ">
+                <div class="navbar navbar-expand-lg">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand d-lg-none">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x d-lg-none">Basik</span>
+                    </a>
+                    <!-- / brand -->
+                    <!-- Navbar collapse -->
+                    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarToggler">
+                        <form class="input-group m-2 my-lg-0 ">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn no-shadow no-bg px-0 text-inherit">
+                                    <i data-feather="search"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Search components..." data-plugin="typeahead" data-api="../assets/api/menu.json">
+                        </form>
+                    </div>
+                    <ul class="nav navbar-menu order-1 order-lg-2">
+                        <li class="nav-item d-none d-sm-block">
+                            <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                                <i data-feather="maximize"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2" data-toggle="dropdown">
+                                <i data-feather="settings"></i>
+                            </a>
+                            <!-- ############ Setting START-->
+                            <div class="dropdown-menu dropdown-menu-center mt-3 w-md animate fadeIn">
+                                <div class="setting px-3">
+                                    <div class="mb-2 text-muted">
+                                        <strong>Setting:</strong>
+                                    </div>
+                                    <div class="mb-3" id="settingLayout">
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyHeader">
+                                            <i></i>
+                                            <small>Sticky header</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyAside">
+                                            <i></i>
+                                            <small>Sticky aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="foldedAside">
+                                            <i></i>
+                                            <small>Folded Aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="hideAside">
+                                            <i></i>
+                                            <small>Hide Aside</small>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Color:</strong>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="radio radio-inline ui-check ui-check-md">
+                                            <input type="radio" name="bg" value="">
+                                            <i></i>
+                                        </label>
+                                        <label class="radio radio-inline ui-check ui-check-color ui-check-md">
+                                            <input type="radio" name="bg" value="bg-dark">
+                                            <i class="bg-dark"></i>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Layouts:</strong>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="dashboard.html" class="btn btn-xs btn-white no-ajax mb-1">Default</a>
+                                        <a href="layout.a.html?bg" class="btn btn-xs btn-primary no-ajax mb-1">A</a>
+                                        <a href="layout.b.html?bg" class="btn btn-xs btn-info no-ajax mb-1">B</a>
+                                        <a href="layout.c.html?bg" class="btn btn-xs btn-success no-ajax mb-1">C</a>
+                                        <a href="layout.d.html?bg" class="btn btn-xs btn-warning no-ajax mb-1">D</a>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Apps:</strong>
+                                    </div>
+                                    <div>
+                                        <a href="dashboard.html" class="btn btn-sm btn-white no-ajax mb-1">Dashboard</a>
+                                        <a href="music.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Music</a>
+                                        <a href="video.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ############ Setting END-->
+                        </li>
+                        <!-- Notification -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 mr-lg-2" data-toggle="dropdown">
+                                <i data-feather="bell"></i>
+                                <span class="badge badge-pill badge-up bg-primary">4</span>
+                            </a>
+                            <!-- dropdown -->
+                            <div class="dropdown-menu dropdown-menu-right mt-3 w-md animate fadeIn p-0">
+                                <div class="scrollable hover" style="max-height: 250px">
+                                    <div class="list list-row">
+                                        <div class="list-item " data-id="19">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-warning">
+		                          T
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    We help companies deliver reliable and beautiful
+                                                    <a href='#'>@IOSapps</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="4">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-success">
+		                          <img src="../assets/img/a4.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Big News! Introducing
+                                                    <a href='#'>NextUX</a> Enterprise 2.1 - additional #Windows Server support
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="8">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-success">
+		                          <img src="../assets/img/a8.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    The biggest software developer conference
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="17">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-warning">
+		                          H
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    AI will deliver adaptive learning processes in assessments & digital textbooks to personalize learning
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="14">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-warning">
+		                          B
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Do you know which are the popular ones? Leave a comment and get to know more from professional developers
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="3">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+		                          <img src="../assets/img/a3.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    <a href='#'>@NextUI</a> submit a ticket request
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex px-3 py-2 b-t">
+                                    <div class="flex">
+                                        <span>6 Notifications</span>
+                                    </div>
+                                    <a href="page.setting.html">See all
+                                        <i class="fa fa-angle-right text-muted"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- / dropdown -->
+                        </li>
+                        <!-- User dropdown menu -->
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center px-2 text-color">
+                                <span class="avatar w-24" style="margin: -2px;"><img src="../assets/img/a3.jpg" alt="..."></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn">
+                                <a class="dropdown-item" href="page.profile.html">
+                                    <span>Jacqueline Reid</span>
+                                </a>
+                                <a class="dropdown-item" href="page.price.html">
+                                    <span class="badge bg-success text-uppercase">Upgrade</span>
+                                    <span>to Pro</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="page.profile.html">
+                                    <span>Profile</span>
+                                </a>
+                                <a class="dropdown-item d-flex" href="page.invoice.html">
+                                    <span class="flex">Invoice</span>
+                                    <span><b class="badge badge-pill gd-warning">5</b></span>
+                                </a>
+                                <a class="dropdown-item" href="page.faq.html">Need help?</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="page.setting.html">
+                                    <span>Account Settings</span>
+                                </a>
+                                <a class="dropdown-item" href="signin.html">Sign out</a>
+                            </div>
+                        </li>
+                        <!-- Navarbar toggle btn -->
+                        <li class="nav-item d-lg-none">
+                            <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarToggler">
+                                <i data-feather="search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link px-1" data-toggle="modal" data-target="#aside">
+                                <i data-feather="menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+            <!-- ############ Content START-->
+            <div id="content" class="flex ">
+                <!-- ############ Main START-->
+                <div>
+                    <div class="page-hero page-container " id="page-hero">
+                        <div class="padding d-flex">
+                            <div class="page-title">
+                                <h2 class="text-md text-highlight">Style</h2>
+                                <small class="text-muted">Format data into a table</small>
+                            </div>
+                            <div class="flex"></div>
+                            <div>
+                                <a href="https://themeforest.net/item/basik-responsive-bootstrap-web-admin-template/23365964" class="btn btn-md text-muted">
+                                    <span class="d-none d-sm-inline mx-1">Buy this Item</span>
+                                    <i data-feather="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content page-container" id="page-content">
+                        <div class="padding">
+                            <div class="mb-5">
+                                <div class="toolbar ">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-icon btn-white" data-toggle="tooltip" title="Trash" id="btn-trash">
+                                            <i data-feather="trash" class="text-muted"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-icon btn-white sort " data-sort="item-title" data-toggle="tooltip" title="Sort">
+                                            <i class="sorting"></i>
+                                        </button>
+                                    </div>
+                                    <form class="flex">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-theme form-control-sm search" placeholder="Search" required>
+                                            <span class="input-group-append">
+                <button class="btn btn-white no-border btn-sm" type="button">
+                  <span class="d-flex text-muted"><i data-feather="search"></i></span>
+                                            </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-theme table-row v-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:20px;">
+                                                    <label class="ui-check m-0">
+                                                        <input type="checkbox">
+                                                        <i></i>
+                                                    </label>
+                                                </th>
+                                                <th class="text-muted">Owner</th>
+                                                <th class="text-muted sortable" data-toggle-class="asc">Project</th>
+                                                <th class="text-muted"><span class="d-none d-sm-block">Tasks</span></th>
+                                                <th class="text-muted"><span class="d-none d-sm-block">Finish</span></th>
+                                                <th style="width:50px;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class=" v-middle" data-id="15">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="15">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Eu">
+                                                            <img src="../assets/img/a8.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Weekend Fun Project</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        You don’t have to switch tools to review code, share input on projects, or open up the conversation to the rest of your team.
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        240
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        50
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="9">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="9">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Luctus">
+                                                            <img src="../assets/img/a1.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Etiam">
+                                                            <img src="../assets/img/a1.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Ultricies">
+                                                            <img src="../assets/img/a15.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Web App develop tutorial</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Build a progressive web app using jQuery
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        2310
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        20
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="7">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="7">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Viverra">
+                                                            <img src="../assets/img/a1.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Design improvement</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Today we're working on improving the design to make the data you need more accessible!
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        510
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        5
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="10">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="10">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Tempus">
+                                                            <img src="../assets/img/a5.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Placerat">
+                                                            <img src="../assets/img/a15.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Semper">
+                                                            <img src="../assets/img/a15.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">AI assistant</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Leaders are running an AMA on Reddit. Ask your question and find out how the project is going
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        240
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        50
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="13">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="13">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Interdum">
+                                                            <img src="../assets/img/a11.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="In">
+                                                            <img src="../assets/img/a6.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Feed Reader</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Email message from a happy user: 'Neat tool.. seems to be the easiest of'
+                                                        <a href='#'>#big data</a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        14
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        20
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="12">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="12">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Pretium">
+                                                            <img src="../assets/img/a3.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Sales Support</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Our client is an IT Healthcare start-up that provides process improvement solutions
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        14
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        20
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="6">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="6">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Dignissim">
+                                                            <img src="../assets/img/a5.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Viverra">
+                                                            <img src="../assets/img/a12.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Integer">
+                                                            <img src="../assets/img/a2.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">eBay Dashboard</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        This makes me believe there are good people in the world still
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        220
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        5
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="1">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="1">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Donec">
+                                                            <img src="../assets/img/a4.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Dignissim">
+                                                            <img src="../assets/img/a9.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">WordPress dashboard redesign</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        In WordPress Tutorial, we’ll streamline the process for you by pointing out the all key features of the WordPress
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        210
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        5
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="16">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="16">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Quam">
+                                                            <img src="../assets/img/a7.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">AI Could Uber</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        When it comes to artificial intelligence, little things can add up in big ways
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        200
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        53
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="3">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="3">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <div class="avatar-group ">
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Cursus">
+                                                            <img src="../assets/img/a8.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Netus">
+                                                            <img src="../assets/img/a5.jpg" alt=".">
+                                                        </a>
+                                                        <a href="#" class="avatar ajax w-32" data-toggle="tooltip" title="Suspendisse">
+                                                            <img src="../assets/img/a4.jpg" alt=".">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color ">Html5 dashboard conference</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Less than a month till we head over to the UK & Ireland with @NextUI
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                        10
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm [object Object]">
+                        50
+                      </span>
+                                                </td>
+                                                <td>
+                                                    <div class="item-action dropdown">
+                                                        <a href="#" data-toggle="dropdown" class="text-muted">
+                                                            <i data-feather="more-vertical"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-black" role="menu">
+                                                            <a class="dropdown-item" href="#">
+                                                                See detail
+                                                            </a>
+                                                            <a class="dropdown-item download">
+                                                                Download
+                                                            </a>
+                                                            <a class="dropdown-item edit">
+                                                                Edit
+                                                            </a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item trash">
+                                                                Delete item
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="d-flex">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <small class="text-muted py-2 mx-2">Total <span id="count">15</span> items</small>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <table class="table table-theme v-middle">
+                                        <thead class="text-muted">
+                                            <tr>
+                                                <th></th>
+                                                <th>User</th>
+                                                <th>Information</th>
+                                                <th>Num</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class=" v-middle" data-id="14">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="14">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <span class="w-32 avatar gd-warning">
+                          B
+                    </span>
+                                                    </a>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-author text-color ">Benjamin Fields</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Managing data in all software or applications becomes simplified when you make use of the best
+                                                        <a href='#'>#DatabaseMan</a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          14
+                        </span>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="17">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="17">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <span class="w-32 avatar gd-warning">
+                          H
+                    </span>
+                                                    </a>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-author text-color ">Helen Valdez</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        AI will highlight & emphasize key areas where students need help, allowing teachers to focus on facilitating the learning process
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          200
+                        </span>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="20">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="20">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <span class="w-32 avatar gd-warning">
+                          G
+                    </span>
+                                                    </a>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-author text-color ">Gloria Williams</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Netflix hackathon creates eye tracking option for iOS app
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          120
+                        </span>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="15">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="15">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <span class="w-32 avatar gd-success">
+                          J
+                    </span>
+                                                    </a>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-author text-color ">Jean Armstrong</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        You don’t have to switch tools to review code, share input on projects, or open up the conversation to the rest of your team.
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          240
+                        </span>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="3">
+                                                <td>
+                                                    <label class="ui-check m-0 ">
+                                                        <input type="checkbox" name="id" value="3">
+                                                        <i></i>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <span class="w-32 avatar gd-primary">
+                          <img src="../assets/img/a3.jpg" alt=".">
+                    </span>
+                                                    </a>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-author text-color ">Jordan Stephens</a>
+                                                    <div class="item-except text-muted text-sm h-1x">
+                                                        Less than a month till we head over to the UK & Ireland with @NextUI
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          10
+                        </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-6">
+                                    <table class="table table-theme v-middle table-hover">
+                                        <thead class="text-muted">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Project</th>
+                                                <th><span class="d-none d-sm-block">Income</span></th>
+                                                <th><span class="d-none d-sm-block">Date</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class=" v-middle" data-id="2">
+                                                <td style="min-width:30px;text-align:center">
+                                                    <small class="text-muted">2</small>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color h-1x">Data analytics application</a>
+                                                    <a href="#" class="item-company text-muted h-1x">
+                                                        Microsoft
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          10
+                        </span>
+                                                </td>
+                                                <td class="no-wrap">
+                                                    <div class="item-date text-muted text-sm d-none d-md-block">45 minutes ago</div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="7">
+                                                <td style="min-width:30px;text-align:center">
+                                                    <small class="text-muted">7</small>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color h-1x">Design improvement</a>
+                                                    <a href="#" class="item-company text-muted h-1x">
+                                                        Lostcorp
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          510
+                        </span>
+                                                </td>
+                                                <td class="no-wrap">
+                                                    <div class="item-date text-muted text-sm d-none d-md-block">21 July</div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="8">
+                                                <td style="min-width:30px;text-align:center">
+                                                    <small class="text-muted">8</small>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color h-1x">DEV DAY 2018</a>
+                                                    <a href="#" class="item-company text-muted h-1x">
+                                                        Jet
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          220
+                        </span>
+                                                </td>
+                                                <td class="no-wrap">
+                                                    <div class="item-date text-muted text-sm d-none d-md-block">02/11 18</div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="5">
+                                                <td style="min-width:30px;text-align:center">
+                                                    <small class="text-muted">5</small>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color h-1x">Google Analytics training</a>
+                                                    <a href="#" class="item-company text-muted h-1x">
+                                                        Sun
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          100
+                        </span>
+                                                </td>
+                                                <td class="no-wrap">
+                                                    <div class="item-date text-muted text-sm d-none d-md-block">3 days ago</div>
+                                                </td>
+                                            </tr>
+                                            <tr class=" v-middle" data-id="4">
+                                                <td style="min-width:30px;text-align:center">
+                                                    <small class="text-muted">4</small>
+                                                </td>
+                                                <td class="flex">
+                                                    <a href="#" class="item-title text-color h-1x">Open source project public release</a>
+                                                    <a href="#" class="item-company text-muted h-1x">
+                                                        GE
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="item-amount d-none d-sm-block text-sm ">
+                          20
+                        </span>
+                                                </td>
+                                                <td class="no-wrap">
+                                                    <div class="item-date text-muted text-sm d-none d-md-block">2 hours ago</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ############ Main END-->
+            </div>
+            <!-- ############ Content END-->
+            <!-- ############ Footer START-->
+            <div id="footer" class="page-footer hide">
+                <div class="d-flex p-3">
+                    <span class="text-sm text-muted flex">&copy; Copyright. flatfull.com</span>
+                    <div class="text-sm text-muted">Version 1.1.2</div>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+        </div>
+        <!-- build:js ../assets/js/site.min.js -->
+        <!-- jQuery -->
+        <script src="../libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- ajax page -->
+        <script src="../libs/pjax/pjax.min.js"></script>
+        <script src="../assets/js/ajax.js"></script>
+        <!-- lazyload plugin -->
+        <script src="../assets/js/lazyload.config.js"></script>
+        <script src="../assets/js/lazyload.js"></script>
+        <script src="../assets/js/plugin.js"></script>
+        <!-- scrollreveal -->
+        <script src="../libs/scrollreveal/dist/scrollreveal.min.js"></script>
+        <!-- feathericon -->
+        <script src="../libs/feather-icons/dist/feather.min.js"></script>
+        <script src="../assets/js/plugins/feathericon.js"></script>
+        <!-- theme -->
+        <script src="../assets/js/theme.js"></script>
+        <script src="../assets/js/utils.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

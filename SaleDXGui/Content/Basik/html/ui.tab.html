@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tab | Basik - Bootstrap 4 Web Application</title>
+        <meta name="description" content="Responsive, Bootstrap, BS4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- style -->
+        <!-- build:css ../assets/css/site.min.css -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+        <!-- endbuild -->
+    </head>
+    <body class="layout-row">
+        <!-- ############ Aside START-->
+        <div id="aside" class="page-sidenav no-shrink bg-light nav-dropdown fade" aria-hidden="true">
+            <div class="sidenav h-100 modal-dialog bg-light">
+                <!-- sidenav top -->
+                <div class="navbar">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand ">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x ">Basik</span>
+                    </a>
+                    <!-- / brand -->
+                </div>
+                <!-- Flex nav content -->
+                <div class="flex scrollable hover">
+                    <div class="nav-active-text-primary" data-nav>
+                        <ul class="nav bg">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Main</span>
+                            </li>
+                            <li>
+                                <a href="dashboard.html">
+                                    <span class="nav-icon text-primary"><i data-feather='home'></i></span>
+                                    <span class="nav-text">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Applications</span>
+                            </li>
+                            <li>
+                                <a href="app.calendar.html">
+                                    <span class="nav-icon text-info"><i data-feather='calendar'></i></span>
+                                    <span class="nav-text">Calendar</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-danger"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.user.html">
+                                    <span class="nav-icon text-success"><i data-feather='users'></i></span>
+                                    <span class="nav-text">Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.message.html">
+                                    <span class="nav-icon text-warning"><i data-feather='message-circle'></i></span>
+                                    <span class="nav-text">Messages</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-warning"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.mail.html">
+                                    <span class="nav-icon text-danger"><i data-feather='mail'></i></span>
+                                    <span class="nav-text">Email</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav ">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">UI elements</span>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='grid'></i></span>
+                                    <span class="nav-text">Components</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="ui.alert.html" class="">
+                                            <span class="nav-text">Alert</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.badge.html" class="">
+                                            <span class="nav-text">Badge</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.button.html" class="">
+                                            <span class="nav-text">Button</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.card.html" class="">
+                                            <span class="nav-text">Card</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.carousel.html" class="">
+                                            <span class="nav-text">Carousel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.color.html" class="">
+                                            <span class="nav-text">Color</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.dropdown.html" class="">
+                                            <span class="nav-text">Dropdown</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.grid.html" class="">
+                                            <span class="nav-text">Grid</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.icon.html" class="">
+                                            <span class="nav-text">Icon</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.list.html" class="">
+                                            <span class="nav-text">List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.modal.html" class="">
+                                            <span class="nav-text">Modal</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.navbar.html" class="">
+                                            <span class="nav-text">Navbar</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.sidenav.html" class="">
+                                            <span class="nav-text">Sidenav</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.timeline.html" class="">
+                                            <span class="nav-text">Timeline</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.tab.html" class="">
+                                            <span class="nav-text">Tab &amp; Collpase</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.tooltip.html" class="">
+                                            <span class="nav-text">Tooltip &amp; Popover</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='box'></i></span>
+                                    <span class="nav-text">Plugins</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="ui.scroll.html" class="">
+                                            <span class="nav-text">Infinite Scroll</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.sortable.html" class="">
+                                            <span class="nav-text">Sortable</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ui.map.html" class="">
+                                            <span class="nav-text">Vector Map</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='disc'></i></span>
+                                    <span class="nav-text">Form</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="form.element.html" class="">
+                                            <span class="nav-text">Form Element</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.layout.html" class="">
+                                            <span class="nav-text">Form Layout</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.validation.html" class="">
+                                            <span class="nav-text">Form Validation</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.editor.html" class="">
+                                            <span class="nav-text">Editor</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.datepicker.html" class="">
+                                            <span class="nav-text">Datepicker</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.select.html" class="">
+                                            <span class="nav-text">Select</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.wizard.html" class="">
+                                            <span class="nav-text">Wizard</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="form.dropzone.html" class="">
+                                            <span class="nav-text">File Upload</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='list'></i></span>
+                                    <span class="nav-text">Tables</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="table.style.html" class="">
+                                            <span class="nav-text">Style</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="table.bootstrap.html" class="">
+                                            <span class="nav-text">Bootstrap Table</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="table.datatables.html" class="">
+                                            <span class="nav-text">Datatables</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='pie-chart'></i></span>
+                                    <span class="nav-text">Charts</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="chart.apex.html" class="">
+                                            <span class="nav-text">Apexchart</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="chart.chartist.html" class="">
+                                            <span class="nav-text">Chartist</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="chart.chartjs.html" class="">
+                                            <span class="nav-text">Chartjs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Extra</span>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='file'></i></span>
+                                    <span class="nav-text">Pages</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="page.profile.html" class="">
+                                            <span class="nav-text">Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.search.html" class="">
+                                            <span class="nav-text">Search</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.invoice.html" class="">
+                                            <span class="nav-text">Invoice</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.faq.html" class="">
+                                            <span class="nav-text">FAQ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.price.html" class="">
+                                            <span class="nav-text">Price</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.setting.html" class="">
+                                            <span class="nav-text">Setting</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page.blank.html" class="">
+                                            <span class="nav-text">Blank</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='lock'></i></span>
+                                    <span class="nav-text">Auth</span>
+                                    <span class="nav-caret"></span>
+                                </a>
+                                <ul class="nav-sub nav-mega">
+                                    <li>
+                                        <a href="signin.html" class="">
+                                            <span class="nav-text">Signin</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="signup.html" class="">
+                                            <span class="nav-text">Signup</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="forgot-password.html" class="">
+                                            <span class="nav-text">Forgot Password</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="lockme.html" class="">
+                                            <span class="nav-text">Lockme Screen</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="">
+                                            <span class="nav-text">Error 404</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="505.html" class="">
+                                            <span class="nav-text">Error 505</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- sidenav bottom -->
+                <div class="no-shrink ">
+                    <div class="p-3 d-flex align-items-center">
+                        <div class="text-sm hidden-folded text-muted">
+                            Trial: 35%
+                        </div>
+                        <div class="progress mx-2 flex" style="height:4px;">
+                            <div class="progress-bar gd-success" style="width: 35%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Aside END-->
+        <div id="main" class="layout-column flex">
+            <!-- ############ Header START-->
+            <div id="header" class="page-header ">
+                <div class="navbar navbar-expand-lg">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand d-lg-none">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x d-lg-none">Basik</span>
+                    </a>
+                    <!-- / brand -->
+                    <!-- Navbar collapse -->
+                    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarToggler">
+                        <form class="input-group m-2 my-lg-0 ">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn no-shadow no-bg px-0 text-inherit">
+                                    <i data-feather="search"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Search components..." data-plugin="typeahead" data-api="../assets/api/menu.json">
+                        </form>
+                    </div>
+                    <ul class="nav navbar-menu order-1 order-lg-2">
+                        <li class="nav-item d-none d-sm-block">
+                            <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                                <i data-feather="maximize"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2" data-toggle="dropdown">
+                                <i data-feather="settings"></i>
+                            </a>
+                            <!-- ############ Setting START-->
+                            <div class="dropdown-menu dropdown-menu-center mt-3 w-md animate fadeIn">
+                                <div class="setting px-3">
+                                    <div class="mb-2 text-muted">
+                                        <strong>Setting:</strong>
+                                    </div>
+                                    <div class="mb-3" id="settingLayout">
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyHeader">
+                                            <i></i>
+                                            <small>Sticky header</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyAside">
+                                            <i></i>
+                                            <small>Sticky aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="foldedAside">
+                                            <i></i>
+                                            <small>Folded Aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="hideAside">
+                                            <i></i>
+                                            <small>Hide Aside</small>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Color:</strong>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="radio radio-inline ui-check ui-check-md">
+                                            <input type="radio" name="bg" value="">
+                                            <i></i>
+                                        </label>
+                                        <label class="radio radio-inline ui-check ui-check-color ui-check-md">
+                                            <input type="radio" name="bg" value="bg-dark">
+                                            <i class="bg-dark"></i>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Layouts:</strong>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="dashboard.html" class="btn btn-xs btn-white no-ajax mb-1">Default</a>
+                                        <a href="layout.a.html?bg" class="btn btn-xs btn-primary no-ajax mb-1">A</a>
+                                        <a href="layout.b.html?bg" class="btn btn-xs btn-info no-ajax mb-1">B</a>
+                                        <a href="layout.c.html?bg" class="btn btn-xs btn-success no-ajax mb-1">C</a>
+                                        <a href="layout.d.html?bg" class="btn btn-xs btn-warning no-ajax mb-1">D</a>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Apps:</strong>
+                                    </div>
+                                    <div>
+                                        <a href="dashboard.html" class="btn btn-sm btn-white no-ajax mb-1">Dashboard</a>
+                                        <a href="music.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Music</a>
+                                        <a href="video.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ############ Setting END-->
+                        </li>
+                        <!-- Notification -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 mr-lg-2" data-toggle="dropdown">
+                                <i data-feather="bell"></i>
+                                <span class="badge badge-pill badge-up bg-primary">5</span>
+                            </a>
+                            <!-- dropdown -->
+                            <div class="dropdown-menu dropdown-menu-right mt-3 w-md animate fadeIn p-0">
+                                <div class="scrollable hover" style="max-height: 250px">
+                                    <div class="list list-row">
+                                        <div class="list-item " data-id="13">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+		                          L
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Thanks! Awesome to see good support on Twitter
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="2">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+		                          <img src="../assets/img/a2.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Can data lead us to making the best possible decisions?
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="3">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+		                          <img src="../assets/img/a3.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    <a href='#'>@NextUI</a> submit a ticket request
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="6">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-danger">
+		                          <img src="../assets/img/a6.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Just saw this on the
+                                                    <a href='#'>@eBay</a> dashboard, dude is an absolute unit.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="11">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-info">
+		                          K
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Prepare the documentation for the
+                                                    <a href='#'>Fitness app</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="7">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+		                          <img src="../assets/img/a7.jpg" alt=".">
+		                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    From design to dashboard,
+                                                    <a href='#'>@Dash</a> builds custom hardware according to on-site requirements
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex px-3 py-2 b-t">
+                                    <div class="flex">
+                                        <span>6 Notifications</span>
+                                    </div>
+                                    <a href="page.setting.html">See all
+                                        <i class="fa fa-angle-right text-muted"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- / dropdown -->
+                        </li>
+                        <!-- User dropdown menu -->
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center px-2 text-color">
+                                <span class="avatar w-24" style="margin: -2px;"><img src="../assets/img/a4.jpg" alt="..."></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn">
+                                <a class="dropdown-item" href="page.profile.html">
+                                    <span>Jacqueline Reid</span>
+                                </a>
+                                <a class="dropdown-item" href="page.price.html">
+                                    <span class="badge bg-success text-uppercase">Upgrade</span>
+                                    <span>to Pro</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="page.profile.html">
+                                    <span>Profile</span>
+                                </a>
+                                <a class="dropdown-item d-flex" href="page.invoice.html">
+                                    <span class="flex">Invoice</span>
+                                    <span><b class="badge badge-pill gd-warning">5</b></span>
+                                </a>
+                                <a class="dropdown-item" href="page.faq.html">Need help?</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="page.setting.html">
+                                    <span>Account Settings</span>
+                                </a>
+                                <a class="dropdown-item" href="signin.html">Sign out</a>
+                            </div>
+                        </li>
+                        <!-- Navarbar toggle btn -->
+                        <li class="nav-item d-lg-none">
+                            <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarToggler">
+                                <i data-feather="search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link px-1" data-toggle="modal" data-target="#aside">
+                                <i data-feather="menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+            <!-- ############ Content START-->
+            <div id="content" class="flex ">
+                <!-- ############ Main START-->
+                <div>
+                    <div class="page-hero page-container " id="page-hero">
+                        <div class="padding d-flex">
+                            <div class="page-title">
+                                <h2 class="text-md text-highlight">Tab</h2>
+                                <small class="text-muted">Toggle the visibility of content</small>
+                            </div>
+                            <div class="flex"></div>
+                            <div>
+                                <a href="https://themeforest.net/item/basik-responsive-bootstrap-web-admin-template/23365964" class="btn btn-md text-muted">
+                                    <span class="d-none d-sm-inline mx-1">Buy this Item</span>
+                                    <i data-feather="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-content page-container" id="page-content">
+                        <div class="padding">
+                            <div class="mb-5">
+                                <a class="btn text-align-auto btn-white" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+                                <button class="btn text-align-auto btn-white" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Button with data-target
+                                </button>
+                                <a class="btn text-align-auto btn-white" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+                                <button class="btn text-align-auto btn-white" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+                                <button class="btn text-align-auto btn-white" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <p>Pellentesque enim, adipiscing ac quisque a etiam ornare ut pretium ultricies nisi, in odio ac nisi a est etiam purus</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                        <div class="card card-body">
+                                            <p>Diam nisl vitae vestibulum pretium, ut orci a ornare et aenean tortor diam, habitant eleifend lobortis facilisi sit dui, et</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                        <div class="card card-body">
+                                            <p>Ac ultricies hendrerit turpis adipiscing etiam blandit arcu proin ut non tristique fermentum aenean a eget ultrices mattis tincidunt potenti</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Accordion</h6>
+                                    <div id="accordion" class="mb-4">
+                                        <div class="card mb-1">
+                                            <div class="card-header no-border" id="headingOne">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Collapsible Group Item #1
+                                                </a>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Dapibus viverra quis sit et quisque id semper sit a amet, tellus sit porttitor sed sed ut donec est, ut</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-1">
+                                            <div class="card-header no-border" id="headingTwo">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Collapsible Group Item #2
+                                                </a>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Diam sit sit massa amet libero at in vel at neque, in ornare duis nec eu et amet volutpat suscipit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-1">
+                                            <div class="card-header no-border" id="headingThree">
+                                                <a href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Collapsible Group Item #3
+                                                </a>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <p>Id volutpat, non phasellus donec nisi ipsum mauris vestibulum scelerisque pulvinar scelerisque ac eu, vitae nullam feugiat a eu lacus</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Tabs</h6>
+                                    <div class="card p-3">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                    <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab">Home</a>
+                                                    <a class="nav-link" data-toggle="pill" href="#v-pills-profile" role="tab">Profile</a>
+                                                    <a class="nav-link" data-toggle="pill" href="#v-pills-messages" role="tab">Messages</a>
+                                                    <a class="nav-link" data-toggle="pill" href="#v-pills-settings" role="tab">Settings</a>
+                                                    <a class="nav-link" data-toggle="pill" href="#v-pills-payment" role="tab">Payment</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="tab-content" id="v-pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                        <p>Diam dui vel, vestibulum diam et mi amet at sed nulla diam suspendisse lacus sed amet, tincidunt ultrices rhoncus ut</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                        <p>Non in morbi dui ut aliquam suspendisse sed ipsum interdum massa arcu varius nunc egestas nullam tristique nibh placerat maecenas</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                                        <p>Arcu vestibulum, tristique est massa egestas ultrices nisi, in orci lectus elementum velit cursus libero tristique sed sed convallis molestie</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                                        <p>Orci aenean sit nibh purus id ut dolor sagittis, auctor molestie pulvinar neque, dui et consequat cras quis felis proin</p>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="v-pills-payment" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                                        <p>Purus, nulla erat molestie fringilla senectus curabitur lobortis tincidunt porttitor dis erat ornare sed sed tortor est in dolor, gravida</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6>Tab styles</h6>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="b-b b-theme nav-active-theme mb-3">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content mb-4">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <p>Id nibh augue eget duis cras aenean ipsum, dignissim quam in non rhoncus et arcu sagittis proin adipiscing sit id</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <p>Sit tellus mauris fringilla phasellus a sit lorem nullam est orci, integer rutrum dolor tristique enim non est amet elit,</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                            <p>Risus lacus magna massa id facilisis amet eget ipsum eu hendrerit libero, adipiscing fames nisl, faucibus aliquam id eget sed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb-3">
+                                        <ul class="nav nav-pills" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home2" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content mb-4">
+                                        <div class="tab-pane fade show active" id="home2" role="tabpanel" aria-labelledby="home-tab">
+                                            <p>Nisl natoque suspendisse consequat, nulla et facilisis tristique interdum duis nibh sagittis, magna arcu luctus ac in tortor ipsum convallis</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                                            <p>Nisi, mattis sit sed dis suspendisse faucibus pellentesque at vitae quis turpis odio risus congue mi suspendisse sapien, cras cursus</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact-tab">
+                                            <p>Sit diam facilisis dictumst eu lectus felis sapien id imperdiet non cursus facilisis orci hendrerit nunc, id sed montes, id</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="b-b">
+                                            <div class="nav-active-border b-primary bottom">
+                                                <ul class="nav" id="myTab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content p-3">
+                                            <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab">
+                                                <p>Donec non lectus etiam est cum pretium aliquet potenti metus, sit posuere posuere orci vulputate dictumst velit egestas eget diam</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab">
+                                                <p>Morbi velit condimentum convallis egestas pharetra nisl donec vel et purus sapien orci adipiscing nec diam nisl, tincidunt est, pharetra,</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab">
+                                                <p>At pretium egestas laoreet ut nibh est duis arcu, in diam mauris a elit ante varius tellus ultrices et fames</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="b-b">
+                                            <div class="nav-active-border b-success top">
+                                                <ul class="nav" id="myTab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home4" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile4" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact4" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content p-3">
+                                            <div class="tab-pane fade show active" id="home4" role="tabpanel" aria-labelledby="home-tab">
+                                                <p>Id sed volutpat, euismod ut iaculis sed purus nibh tincidunt volutpat sollicitudin sit in sagittis, nunc enim feugiat pretium tortor</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab">
+                                                <p>Rhoncus non diam cras rutrum pretium adipiscing sagittis, amet, facilisi porttitor ac odio sed id viverra malesuada ipsum vel metus</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab">
+                                                <p>Duis id in nisl, euismod morbi rutrum varius tempus sollicitudin justo neque tortor, et diam placerat leo cras lacus sem</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ############ Main END-->
+            </div>
+            <!-- ############ Content END-->
+            <!-- ############ Footer START-->
+            <div id="footer" class="page-footer hide">
+                <div class="d-flex p-3">
+                    <span class="text-sm text-muted flex">&copy; Copyright. flatfull.com</span>
+                    <div class="text-sm text-muted">Version 1.1.2</div>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+        </div>
+        <!-- build:js ../assets/js/site.min.js -->
+        <!-- jQuery -->
+        <script src="../libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- ajax page -->
+        <script src="../libs/pjax/pjax.min.js"></script>
+        <script src="../assets/js/ajax.js"></script>
+        <!-- lazyload plugin -->
+        <script src="../assets/js/lazyload.config.js"></script>
+        <script src="../assets/js/lazyload.js"></script>
+        <script src="../assets/js/plugin.js"></script>
+        <!-- scrollreveal -->
+        <script src="../libs/scrollreveal/dist/scrollreveal.min.js"></script>
+        <!-- feathericon -->
+        <script src="../libs/feather-icons/dist/feather.min.js"></script>
+        <script src="../assets/js/plugins/feathericon.js"></script>
+        <!-- theme -->
+        <script src="../assets/js/theme.js"></script>
+        <script src="../assets/js/utils.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

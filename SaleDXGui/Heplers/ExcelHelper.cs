@@ -1,0 +1,181 @@
+﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Web;
+
+namespace SaleDXGui.Heplers
+{
+    public static class ExcelHelper
+    {
+        public static List<T> GetDataFromFile<T>(HttpPostedFileBase file)
+        {
+            try
+            {
+                CultureInfo provider = new CultureInfo("vi-VI");
+                var extension = Path.GetExtension(file.FileName).ToLower();
+                if (extension != ".xls" && extension != ".xlsx")
+                    throw new Exception("File sai định dạng");
+                var result = new List<T>();
+                using (var package = new ExcelPackage(file.InputStream))
+                {
+                    var dataWorksheet = package.Workbook.Worksheets[1];
+                    for (int i = 4; i < dataWorksheet.Dimension.End.Row + 1; i++)
+                    {
+                        var rowData = (T)Activator.CreateInstance(typeof(T));
+                        for (int j = 0; j < dataWorksheet.Dimension.End.Column; j++)
+                        {
+                            if (dataWorksheet.Cells[2, j + 1].Value != null)
+                            {
+                                var property = dataWorksheet.Cells[2, j + 1].Value.ToString();
+                                string cellValue = "";
+                                if (property == "ContactPointString")
+                                {
+                                    var cellValueContactPoint = dataWorksheet.Cells[i, 6].Text;
+                                    var cellValuePhone = dataWorksheet.Cells[i, 8].Text;
+                                    if (!string.IsNullOrEmpty(cellValueContactPoint) && !string.IsNullOrEmpty(cellValuePhone))
+                                    {
+                                        cellValue = "Facebook: " + cellValueContactPoint + Environment.NewLine + "IMessage: " + cellValuePhone + Environment.NewLine + "Messenger: " + cellValueContactPoint + Environment.NewLine + "Telegram:+84" + cellValuePhone.Substring(1) + Environment.NewLine + "Zalo: " + cellValuePhone;
+                                    }
+                                }
+                                else
+                                {
+                                    cellValue = dataWorksheet.Cells[i, j + 1].Text;
+                                }
+
+                                var propertyInfo = rowData.GetType().GetProperty(property);
+                                if (!string.IsNullOrEmpty(cellValue))
+                                {
+                                    if (propertyInfo.PropertyType == typeof(DateTime) || propertyInfo.PropertyType == typeof(DateTime?))
+                                    {
+                                        try
+                                        {
+                                            rowData.GetType().GetProperty(property).SetValue(rowData, DateTime.ParseExact(cellValue, "yyyy-MM-dd HH:mm", provider));
+                                        }
+                                        catch (Exception)
+                                        {
+                                            rowData.GetType().GetProperty(property).SetValue(rowData, DateTime.ParseExact(cellValue, "yyyy-MM-dd", provider));
+                                        }
+                                    }
+                                    else if (propertyInfo.PropertyType == typeof(int) || propertyInfo.PropertyType == typeof(int?))
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, int.Parse(cellValue, provider));
+                                    }
+                                    else if (propertyInfo.PropertyType == typeof(long) || propertyInfo.PropertyType == typeof(long?))
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, long.Parse(cellValue, provider));
+                                    }
+                                    else if (propertyInfo.PropertyType == typeof(float) || propertyInfo.PropertyType == typeof(float?))
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, float.Parse(cellValue, provider));
+                                    }
+                                    else if (propertyInfo.PropertyType == typeof(double) || propertyInfo.PropertyType == typeof(double?))
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, double.Parse(cellValue, provider));
+                                    }
+                                    else if (propertyInfo.PropertyType == typeof(decimal) || propertyInfo.PropertyType == typeof(decimal?))
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, decimal.Parse(cellValue, provider));
+                                    }
+                                    else
+                                    {
+                                        rowData.GetType().GetProperty(property).SetValue(rowData, Convert.ChangeType(cellValue, propertyInfo.PropertyType));
+                                    }
+                                }
+                            }
+                        }
+                        result.Add(rowData);
+                    }
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static MemoryStream ExportToFile<T>(List<T> data, List<string> properties)
+        {
+            var stream = new MemoryStream();
+            using (ExcelPackage excel = new ExcelPackage(stream))
+            {
+                var workSheet = excel.Workbook.Worksheets.Add("Sheet 1");
+
+                //dong code
+                workSheet.Row(2).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                workSheet.Row(2).Style.Font.SetFromFont(new Font("Times New Roman", 13));
+                workSheet.Row(2).Style.Font.Bold = true;
+                workSheet.Row(2).Style.Font.Italic = true;
+                for (int i = 0; i < properties.Count; i++)
+                {
+                    workSheet.Cells[2, i + 2].Value = properties[i];
+                }
+
+                //dong name
+                workSheet.Row(3).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                workSheet.Row(3).Style.Font.SetFromFont(new Font("Times New Roman", 13));
+                workSheet.Row(3).Style.Font.Bold = true;
+
+                workSheet.Cells[3, 1].Value = "STT";
+                for (int i = 0; i < properties.Count; i++)
+                {
+                    var attributes = TypeDescriptor.GetProperties(typeof(T))[properties[i]].Attributes;
+                    DescriptionAttribute desAttr = (DescriptionAttribute)attributes[typeof(DescriptionAttribute)];
+                    workSheet.Cells[3, i + 2].Value = desAttr.Description;
+                    workSheet.Cells[3, i + 2].AutoFitColumns();
+                }
+
+                var longColumns = new List<int>();
+                for (int i = 0; i < data.Count; i++)
+                {
+                    workSheet.Row(i + 4).Style.Font.SetFromFont(new Font("Times New Roman", 13));
+                    var rowData = data[i];
+                    workSheet.Cells[i + 4, 1].Value = i + 1;
+                    for (int j = 0; j < properties.Count; j++)
+                    {
+                        var cellValue = rowData.GetType().GetProperty(properties[j]).GetValue(rowData, null);
+                        workSheet.Cells[i + 4, j + 2].Value = cellValue;
+                        if (cellValue != null && cellValue.ToString().Length > 75 && !longColumns.Contains(j))
+                        {
+                            longColumns.Add(j);
+                        }
+                    }
+                }
+                for (int j = 0; j < properties.Count; j++)
+                {
+                    var property = TypeDescriptor.GetProperties(typeof(T))[properties[j]];
+                    if (property.PropertyType == typeof(DateTime) || property.PropertyType == typeof(DateTime?))
+                    {
+                        workSheet.Column(j + 2).Style.Numberformat.Format = "yyyy-MM-dd HH:mm";
+                    }
+                    if (property.PropertyType == typeof(decimal) || property.PropertyType == typeof(decimal?) ||
+                        property.PropertyType == typeof(float) || property.PropertyType == typeof(float?) ||
+                        property.PropertyType == typeof(double) || property.PropertyType == typeof(double?) ||
+                        property.PropertyType == typeof(int) || property.PropertyType == typeof(int?) ||
+                        property.PropertyType == typeof(long) || property.PropertyType == typeof(long?))
+                    {
+                        //workSheet.Column(j + 2).Style.Numberformat.Format = "0";
+                        workSheet.Column(j + 2).Style.Numberformat.Format = "#,##0";
+                    }
+                    if (longColumns.Contains(j))
+                    {
+                        workSheet.Column(j + 2).Width = 80;
+                    }
+                    else
+                    {
+                        workSheet.Column(j + 2).AutoFit();
+                    }
+                }
+                excel.Save();
+            }
+            stream.Position = 0;
+            return stream;
+        }
+    }
+}

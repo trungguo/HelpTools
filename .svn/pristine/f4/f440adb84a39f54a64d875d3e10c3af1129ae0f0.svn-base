@@ -1,0 +1,3 @@
+@using Textpad.Areas.HelpPage.ModelDescriptions
+@model SimpleTypeModelDescription
+@Model.Documentation

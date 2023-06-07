@@ -1,0 +1,11 @@
+[TNTK] Sale_2|Facebook
+[TNFF] Bám đuổi khách hàng :  Facebook3
+[TNGF] Bám đuổi hội nhóm :  Facebook1
+[TNTK] Sale_3|Telegram
+[TNFF] Bám đuổi khách hàng : Telegram1|Telegram3
+[TNGF] Bám đuổi hội nhóm : Telegram2|Telegram4
+[TNTK] Sale_4|Zalo
+[TNFF] Bám đuổi khách hàng : Zalo1|Zalo3
+[TNGF] Bám đuổi hội nhóm : Zalo2|Zalo4
+[TNTK] IMess|IMess
+[TNFF] Bám đuổi khách hàng : 0328672337|0336156930|0342536024|0348637194|0352360010|0366836685|0369032181|0372700999|0385560186|0389405480

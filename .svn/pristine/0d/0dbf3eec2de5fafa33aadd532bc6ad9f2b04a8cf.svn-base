@@ -1,0 +1,56 @@
+﻿@using SaleDXGui.Domains
+@using SaleDXGui.Models
+@model SearchResultModel<AccountSearchModel, List<Account>>
+@{
+
+}
+@if (Model?.Data == null || Model.Data.Count == 0)
+{
+    <tr class="v-middle">
+        <td class="text-muted text-center" colspan="6">
+            Không tìm thấy kết quả
+        </td>
+    </tr>
+}
+else
+{
+    foreach (var item in Model.Data)
+    {
+        <tr class="v-middle">
+            <td>
+                <label class="ui-check m-0 ">
+                    <input class="item-checkbox" type="checkbox" name="id" item-id="@item.Id">
+                    <i></i>
+                </label>
+            </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                <a href="/IMAccount/Details?id=@item.Id">
+                    @item.Name
+                </a>
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Note
+            </td>
+        </tr>
+    }
+
+    <script>
+    $(function () {
+        initTable("#mainTable", false);
+        initPager("#mainTable", @(Model.SearchModel.PageIndex),  @(Model.SearchModel.PageSize),  @(Model.Total), function (pageIndex) { Search(pageIndex); });
+    })
+    </script>
+}
+
+
+
+

@@ -1,0 +1,1297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Báo giá</title>
+        <meta name="description" content="Responsive, Bootstrap, BS4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- style -->
+        <!-- build:css ../assets/css/site.min.css -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+        <!-- endbuild -->
+    </head>
+    <body class="layout-row">
+        <!-- ############ Aside START-->
+        <div id="aside" class="page-sidenav no-shrink bg-light nav-dropdown fade" aria-hidden="true">
+            <div class="sidenav h-100 modal-dialog bg-light">
+                <!-- sidenav top -->
+                <div class="navbar">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand ">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x ">Tiền tuyến</span>
+                    </a>
+                    <!-- / brand -->
+                </div>
+                <!-- Flex nav content -->
+                <div class="flex scrollable hover">
+                    <div class="nav-active-text-primary" data-nav>
+                        <ul class="nav bg">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Phân tích</span>
+                            </li>
+                            <li>
+                                <a href="dashboard.html">
+                                    <span class="nav-icon text-primary"><i data-feather='home'></i></span>
+                                    <span class="nav-text">Báo cáo BI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dashboard.html">
+                                    <span class="nav-icon text-danger"><i data-feather='sunrise'></i></span>
+                                    <span class="nav-text">Trận giả</span>
+                                </a>
+                            </li>
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Quản lý</span>
+                            </li>
+                            <li>
+                                <a href="app.calendar.html">
+                                    <span class="nav-icon text-info"><i data-feather='users'></i></span>
+                                    <span class="nav-text">Báo giá</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-danger"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.user.html">
+                                    <span class="nav-icon text-success"><i data-feather='git-branch'></i></span>
+                                    <span class="nav-text">Đơn hàng bán</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.message.html">
+                                    <span class="nav-icon text-warning"><i data-feather='user-check'></i></span>
+                                    <span class="nav-text">Hợp đồng bán</span>
+                                    <span class="nav-badge"><b class="badge-circle xs text-warning"></b></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app.mail.html">
+                                    <span class="nav-icon text-danger"><i data-feather='mail'></i></span>
+                                    <span class="nav-text">Doanh số</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav ">
+                            <li class="nav-header hidden-folded">
+                                <span class="text-muted">Cấu hình</span>
+                            </li>
+                            <li>
+                                <a href="/master-data#customer">
+                                    <span class="nav-icon "><i data-feather='layers'></i></span>
+                                    <span class="nav-text">Dữ liệu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="">
+                                    <span class="nav-icon"><i data-feather='link'></i></span>
+                                    <span class="nav-text">Kết nối</span>
+                                </a>
+                            </li>
+                       
+                        </ul>
+                    </div>
+                </div>
+                <!-- sidenav bottom -->
+                <div class="no-shrink ">
+                    <div class="p-3 d-flex align-items-center">
+                        <a href="index.html" class="navbar-brand text-color">
+                            <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <g class="loading-spin" style="transform-origin: 256px 256px">
+                                    <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                                </g>
+                            </svg>
+                            <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                            <span class="hidden-folded d-inline l-s-n-1x ">Buzz</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Aside END-->
+        <div id="main" class="layout-column flex">
+            <!-- ############ Header START-->
+            <div id="header" class="page-header ">
+                <div class="navbar navbar-expand-lg">
+                    <!-- brand -->
+                    <a href="index.html" class="navbar-brand d-lg-none">
+                        <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g class="loading-spin" style="transform-origin: 256px 256px">
+                                <path d="M200.043 106.067c-40.631 15.171-73.434 46.382-90.717 85.933H256l-55.957-85.933zM412.797 288A160.723 160.723 0 0 0 416 256c0-36.624-12.314-70.367-33.016-97.334L311 288h101.797zM359.973 134.395C332.007 110.461 295.694 96 256 96c-7.966 0-15.794.591-23.448 1.715L310.852 224l49.121-89.605zM99.204 224A160.65 160.65 0 0 0 96 256c0 36.639 12.324 70.394 33.041 97.366L201 224H99.204zM311.959 405.932c40.631-15.171 73.433-46.382 90.715-85.932H256l55.959 85.932zM152.046 377.621C180.009 401.545 216.314 416 256 416c7.969 0 15.799-.592 23.456-1.716L201.164 288l-49.118 89.621z"></path>
+                            </g>
+                        </svg>
+                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                        <span class="hidden-folded d-inline l-s-n-1x d-lg-none">Buzz</span>
+                    </a>
+                    <!-- / brand -->
+                    <!-- Navbar collapse -->
+                    <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarToggler">
+                        <form class="input-group m-2 my-lg-0 ">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn no-shadow no-bg px-0 text-inherit">
+                                    <i data-feather="search"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Search components..." data-plugin="typeahead" data-api="../assets/api/menu.json">
+                        </form>
+                    </div>
+                    <ul class="nav navbar-menu order-1 order-lg-2">
+                        <li class="nav-item d-none d-sm-block">
+                            <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                                <i data-feather="maximize"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2" data-toggle="dropdown">
+                                <i data-feather="settings"></i>
+                            </a>
+                            <!-- ############ Setting START-->
+                            <div class="dropdown-menu dropdown-menu-center mt-3 w-md animate fadeIn">
+                                <div class="setting px-3">
+                                    <div class="mb-2 text-muted">
+                                        <strong>Setting:</strong>
+                                    </div>
+                                    <div class="mb-3" id="settingLayout">
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyHeader">
+                                            <i></i>
+                                            <small>Sticky header</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="stickyAside">
+                                            <i></i>
+                                            <small>Sticky aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="foldedAside">
+                                            <i></i>
+                                            <small>Folded Aside</small>
+                                        </label>
+                                        <label class="ui-check ui-check-rounded my-1 d-block">
+                                            <input type="checkbox" name="hideAside">
+                                            <i></i>
+                                            <small>Hide Aside</small>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Color:</strong>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="radio radio-inline ui-check ui-check-md">
+                                            <input type="radio" name="bg" value="">
+                                            <i></i>
+                                        </label>
+                                        <label class="radio radio-inline ui-check ui-check-color ui-check-md">
+                                            <input type="radio" name="bg" value="bg-dark">
+                                            <i class="bg-dark"></i>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Layouts:</strong>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="dashboard.html" class="btn btn-xs btn-white no-ajax mb-1">Default</a>
+                                        <a href="layout.a.html?bg" class="btn btn-xs btn-primary no-ajax mb-1">A</a>
+                                        <a href="layout.b.html?bg" class="btn btn-xs btn-info no-ajax mb-1">B</a>
+                                        <a href="layout.c.html?bg" class="btn btn-xs btn-success no-ajax mb-1">C</a>
+                                        <a href="layout.d.html?bg" class="btn btn-xs btn-warning no-ajax mb-1">D</a>
+                                    </div>
+                                    <div class="mb-2 text-muted">
+                                        <strong>Apps:</strong>
+                                    </div>
+                                    <div>
+                                        <a href="dashboard.html" class="btn btn-sm btn-white no-ajax mb-1">Dashboard</a>
+                                        <a href="music.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Music</a>
+                                        <a href="video.html?bg" class="btn btn-sm btn-white no-ajax mb-1">Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ############ Setting END-->
+                        </li>
+                        <!-- Notification -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-2 mr-lg-2" data-toggle="dropdown">
+                                <i data-feather="bell"></i>
+                                <span class="badge badge-pill badge-up bg-primary">8</span>
+                            </a>
+                            <!-- dropdown -->
+                            <div class="dropdown-menu dropdown-menu-right mt-3 w-md animate fadeIn p-0">
+                                <div class="scrollable hover" style="max-height: 250px">
+                                    <div class="list list-row">
+                                        <div class="list-item " data-id="12">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-info">
+                                                        A
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    <a href='#'>Support</a> team updated the status
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="8">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-success">
+                                                        <img src="../assets/img/a8.jpg" alt=".">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    The biggest software developer conference
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="16">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-info">
+                                                        F
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    What if AI Could Uber the Health Care Industry?
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="2">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+                                                        <img src="../assets/img/a2.jpg" alt=".">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Can data lead us to making the best possible decisions?
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="13">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-primary">
+                                                        L
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    Thanks! Awesome to see good support on Twitter
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-item " data-id="20">
+                                            <div>
+                                                <a href="#">
+                                                    <span class="w-32 avatar gd-warning">
+                                                        G
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="item-feed h-2x">
+                                                    <a href='#'>@Netflix</a> hackathon
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex px-3 py-2 b-t">
+                                    <div class="flex">
+                                        <span>6 Notifications</span>
+                                    </div>
+                                    <a href="page.setting.html">
+                                        See all
+                                        <i class="fa fa-angle-right text-muted"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- / dropdown -->
+                        </li>
+                       
+                        <li class="nav-item d-none d-sm-block text-primary">
+                            <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                                <i data-feather="grid"></i>
+                            </a>
+                        </li>
+                        <!-- Navarbar toggle btn -->
+                        <li class="nav-item d-lg-none">
+                            <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarToggler">
+                                <i data-feather="search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link px-1" data-toggle="modal" data-target="#aside">
+                                <i data-feather="menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+            <!-- ############ Content START-->
+            <div id="content" class="flex ">
+                <!-- ############ Main START-->
+                <div class="d-flex flex fixed-content">
+                    <div class="fade aside aside-sm" id="content-aside">
+                        <div class="modal-dialog d-flex flex-column w-md bg-body" id="mail-nav">
+                            <!--<div class="navbar">
+                                <span class="text-md">Email</span>
+                            </div>-->
+                            <div class="scrollable hover">
+                                <div class="p-2 px-3">
+                                    <button class="btn btn-sm btn-block box-shadows btn-rounded gd-info text-white" id="btn-new-mail">
+                                        Lập báo giá
+                                    </button>
+                                </div>
+                                <div class="sidenav my-3">
+                                    <nav class="nav-active-text-primary" data-nav>
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="app.mail.html#inbox">
+                                                    <span class="nav-icon">
+                                                        <i data-feather="refresh-cw"></i>
+                                                    </span>
+                                                    <span class="nav-text">Toàn bộ</span>
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-pill gd-danger">9</b>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#inbox">
+                                                    <span class="nav-icon">
+                                                        <i data-feather="edit-2"></i>
+                                                    </span>
+                                                    <span class="nav-text">Đang lập</span>
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-pill gd-info">9</b>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#sent">
+                                                    <span class="nav-icon">
+                                                        <i data-feather="send"></i>
+                                                    </span>
+                                                    <span class="nav-text">Chờ duyệt</span>
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-pill gd-danger">10</b>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#draft">
+                                                    <span class="nav-icon">
+                                                        <i data-feather="check-circle"></i>
+                                                    </span>
+                                                    <span class="nav-text">Đã duyệt</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#draft">
+                                                    <span class="nav-icon">
+                                                        <i data-feather="x"></i>
+                                                    </span>
+                                                    <span class="nav-text">Đã hủy</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-header d-flex">
+                                                <div class="py-2 text-muted">Phạm vi</div>
+                                                <span class="flex"></span>
+                                                <div class="dropdown dropleft">
+                                                    <button data-toggle="dropdown" class="btn btn-sm btn-icon no-shadow no-bg">
+                                                        <i data-feather="plus"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu w">
+                                                        <div class="p-3">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control form-control-sm" id="newField" placeholder="New label" required>
+                                                                <span class="input-group-append">
+                                                                    <button class="btn btn-white no-shadow btn-sm" type="button" id="newBtn">
+                                                                        <i data-feather="check"></i>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#html5" class="link">
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-circle text-primary mx-1"></b>
+                                                    </span>
+                                                    <span class="nav-text name">Toàn bộ</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#bootstrap" class="link">
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-circle text-info mx-1"></b>
+                                                    </span>
+                                                    <span class="nav-text name">Tôi phụ trách</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#clients" class="link">
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-circle text-warning mx-1"></b>
+                                                    </span>
+                                                    <span class="nav-text name">Phòng tôi phụ trách</span>
+                                                </a>
+                                            </li>
+                                            <!--<li>
+        <a href="app.mail.html#work" class="link">
+            <span class="nav-badge">
+                <b class="badge badge-circle text-warning mx-1"></b>
+            </span>
+            <span class="nav-text name">Private</span>
+        </a>
+    </li>-->
+
+
+                                            <li class="nav-header d-flex">
+                                                <div class="py-2 text-muted">Tiện ích</div>
+                                                <span class="flex"></span>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#html5" class="link">
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-circle mx-1"></b>
+                                                    </span>
+                                                    <span class="nav-text name">Import</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="app.mail.html#bootstrap" class="link">
+                                                    <span class="nav-badge">
+                                                        <b class="badge badge-circle mx-1"></b>
+                                                    </span>
+                                                    <span class="nav-text name">Export</span>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aside-deck hide" id="mail-deck">
+                        <div class="card card-origin alert p-0 m-0 b-a hide">
+                            <div class="card-header d-flex align-items-center bg-body">
+                                <div class="flex h-1x mx-1 mail-to">New mail</div>
+                                <div class="ml-auto no-wrap">
+                                    <a class="p-1">
+                                        <span>
+	                          <i data-feather="arrow-right" width="12" height="12"></i>
+	                      </span>
+                                    </a>
+                                    <a class="p-1 text-muted" data-toggle-class="card-hide-body" data-target=".card" data-target-closest="true">
+                                        <i data-feather="minus" width="12" height="12"></i>
+                                    </a>
+                                    <a class="p-1 text-muted" data-dismiss="alert">
+                                        <i data-feather="x" width="12" height="12"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control" placeholder="Recipients">
+                                    </div>
+                                    <div>
+                                        <input type="text" class="form-control" placeholder="Subject">
+                                    </div>
+                                    <div class="note-editor-inline">
+                                        <textarea class="form-control summernote">
+                                        </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex" id="content-body">
+                        <div class="d-flex flex-column flex" id="mail-list" data-plugin="mail">
+                            <div class="p-3">
+                                <div class="toolbar ">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-icon btn-white" data-toggle="tooltip" title="Trash" id="btn-trash">
+                                            <i data-feather="trash" class="text-muted"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-icon btn-white sort " data-sort="item-title" data-toggle="tooltip" title="Sort">
+                                            <i class="sorting"></i>
+                                        </button>
+                                    </div>
+                                    <form class="flex">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-theme form-control-sm search" placeholder="Search" required>
+                                            <span class="input-group-append">
+				            <button class="btn btn-white no-border btn-sm" type="button">
+				              <span class="d-flex text-muted"><i data-feather="search"></i></span>
+                                            </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                    <button data-toggle="modal" data-target="#content-aside" data-modal class="btn btn-sm btn-icon btn-white d-md-none">
+                                        <i data-feather="menu"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="scroll-y mx-3 mb-0 card">
+                                <div class="loading m-4"></div>
+                                <div class="list list-row hide">
+                                    <div class="list-item " data-id="9">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="9">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#9">
+                                                <span class="w-40 avatar gd-info" data-toggle-class="loading">
+	      			              <img src="../assets/img/a9.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#9" class="item-title text-color h-1x">Web App develop tutorial</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Build a progressive web app using jQuery
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Personal,Private,Draft,Company,Sent,Trash,Workshop
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">2 days ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="17">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="17">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#17">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              H
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#17" class="item-title text-color h-1x">AI Could Uber</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                AI will highlight & emphasize key areas where students need help, allowing teachers to focus on facilitating the learning process
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Company,Personal,Sent,Private,Draft,Workshop,Trash
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">13/12 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="2">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="2">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#2">
+                                                <span class="w-40 avatar gd-primary" data-toggle-class="loading">
+	      			              <img src="../assets/img/a2.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#2" class="item-title text-color h-1x">Data analytics application</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                With
+                                                <a href='#'>@Dashboard</a>, you can create fully customized and interactive snapshots, scorecards, and dashboards. Visit our live dashboard gallery to see a glimpse of what's possible.
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Personal,Sent,Draft,Trash,Private,Workshop,Company
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">45 minutes ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="16">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="16">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#16">
+                                                <span class="w-40 avatar gd-info" data-toggle-class="loading">
+	      			              F
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#16" class="item-title text-color h-1x">AI Could Uber</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                When it comes to artificial intelligence, little things can add up in big ways
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Workshop,Company,Personal,Private,Trash,Sent,Draft
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">03/12 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="17">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="17">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#17">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              A
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#17" class="item-title text-color h-1x">AI Could Uber</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Alibaba made a smart screen to help blind people shop and it costs next to nothing
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Workshop,Company,Sent,Personal,Trash,Private,Draft
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">13/12 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="1">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="1">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#1">
+                                                <span class="w-40 avatar gd-primary" data-toggle-class="loading">
+	      			              <img src="../assets/img/a1.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#1" class="item-title text-color h-1x">WordPress dashboard redesign</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                In WordPress Tutorial, we’ll streamline the process for you by pointing out the all key features of the WordPress
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Draft,Trash,Company,Sent,Personal,Workshop,Private
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">20 minutes ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="6">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="6">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#6">
+                                                <span class="w-40 avatar gd-danger" data-toggle-class="loading">
+	      			              <img src="../assets/img/a6.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#6" class="item-title text-color h-1x">eBay Dashboard</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                This makes me believe there are good people in the world still
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Sent,Personal,Company,Draft,Private,Trash,Workshop
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">1 Week ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="8">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="8">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#8">
+                                                <span class="w-40 avatar gd-success" data-toggle-class="loading">
+	      			              <img src="../assets/img/a8.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#8" class="item-title text-color h-1x">DEV DAY 2018</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Working on a research piece on the history of vocational schools in America.
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Trash,Workshop,Sent,Personal,Company,Draft,Private
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">02/11 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="19">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="19">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#19">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              T
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#19" class="item-title text-color h-1x">IOS Application</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                We design and implement native iOS apps that harmonize simplicity of design and complexity of function
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Sent,Private,Workshop,Draft,Trash,Personal,Company
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">13/12 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="4">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="4">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#4">
+                                                <span class="w-40 avatar gd-success" data-toggle-class="loading">
+	      			              <img src="../assets/img/a4.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#4" class="item-title text-color h-1x">Open source project public release</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                New out-of-the box dashboards and enhanced security and compliance
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Draft,Workshop,Sent,Private,Company,Personal,Trash
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">2 hours ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="13">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="13">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#13">
+                                                <span class="w-40 avatar gd-primary" data-toggle-class="loading">
+	      			              L
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#13" class="item-title text-color h-1x">Feed Reader</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Email message from a happy user: 'Neat tool.. seems to be the easiest of'
+                                                <a href='#'>#big data</a>
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Draft,Private,Sent,Personal,Workshop,Company,Trash
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">3 weeks ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="15">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="15">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#15">
+                                                <span class="w-40 avatar gd-success" data-toggle-class="loading">
+	      			              J
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#15" class="item-title text-color h-1x">Weekend Fun Project</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                You don’t have to switch tools to review code, share input on projects, or open up the conversation to the rest of your team.
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Sent,Draft,Private,Workshop,Company,Trash,Personal
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">03/12 18</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="7">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="7">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#7">
+                                                <span class="w-40 avatar gd-primary" data-toggle-class="loading">
+	      			              <img src="../assets/img/a7.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#7" class="item-title text-color h-1x">Design improvement</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Today we're working on improving the design to make the data you need more accessible!
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Draft,Personal,Private,Company,Workshop,Sent,Trash
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">21 July</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="5">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="5">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#5">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              <img src="../assets/img/a5.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#5" class="item-title text-color h-1x">Google Analytics training</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Free Worksheet included. Read on through or save for later but face the fear of entering your Google Analytics
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Personal,Sent,Draft,Private,Workshop,Company,Trash
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">3 days ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="11">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="11">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#11">
+                                                <span class="w-40 avatar gd-info" data-toggle-class="loading">
+	      			              K
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#11" class="item-title text-color h-1x">Fitness application</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                @DataAPI Implemented new API for transation data from client to server.
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Company,Draft,Workshop,Personal,Trash,Sent,Private
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">20 minutes ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="12">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="12">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#12">
+                                                <span class="w-40 avatar gd-info" data-toggle-class="loading">
+	      			              A
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#12" class="item-title text-color h-1x">Sales Support</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Our client is an IT Healthcare start-up that provides process improvement solutions
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Personal,Draft,Private,Trash,Workshop,Company,Sent
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">5 hours ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="14">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="14">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#14">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              B
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#14" class="item-title text-color h-1x">Database management</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Managing data in all software or applications becomes simplified when you make use of the best
+                                                <a href='#'>#DatabaseMan</a>
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Company,Personal,Trash,Workshop,Sent,Private,Draft
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">1 day ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="10">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="10">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#10">
+                                                <span class="w-40 avatar gd-danger" data-toggle-class="loading">
+	      			              <img src="../assets/img/a10.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#10" class="item-title text-color h-1x">AI assistant</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Leaders are running an AMA on Reddit. Ask your question and find out how the project is going
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Sent,Workshop,Draft,Company,Trash,Personal,Private
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">1 day ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="3">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="3">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#3">
+                                                <span class="w-40 avatar gd-primary" data-toggle-class="loading">
+	      			              <img src="../assets/img/a3.jpg" alt=".">
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#3" class="item-title text-color h-1x">Html5 dashboard conference</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Less than a month till we head over to the UK & Ireland with @NextUI
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Company,Personal,Sent,Draft,Trash,Private,Workshop
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="item-icon text-muted">
+                                                <i data-feather="paperclip" width="10" height="10"></i>
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">1 hour ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item " data-id="20">
+                                        <div>
+                                            <label class="ui-check m-0 ">
+                                                <input type="checkbox" name="id" value="20">
+                                                <i></i>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <a href="#" data-toggle-class>
+                                                <i data-feather="star" class="active-warning text-muted"></i>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="app.mail.detail.html#20">
+                                                <span class="w-40 avatar gd-warning" data-toggle-class="loading">
+	      			              G
+	      			        </span>
+                                            </a>
+                                        </div>
+                                        <div class="flex">
+                                            <a href="app.mail.detail.html#20" class="item-title text-color h-1x">Netflix hackathon ios app</a>
+                                            <div class="item-except text-muted text-sm h-1x">
+                                                Netflix hackathon creates eye tracking option for iOS app
+                                            </div>
+                                            <div class="item-tag tag hide">
+                                                Trash,Company,Sent,Personal,Workshop,Private,Draft
+                                            </div>
+                                        </div>
+                                        <div class="no-wrap">
+                                            <div class="item-date text-muted text-sm d-none d-md-block">25/12 18</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="no-result hide">
+                                    <div class="p-4 text-center">
+                                        No Results
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3 py-3 mt-auto">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex d-flex flex-row">
+                                        <button class="btn btn-sm no-bg no-shadow px-0 pager-prev">
+                                            <i data-feather="chevron-left"></i>
+                                        </button>
+                                        <div class="pagination pagination-sm mx-1">
+                                        </div>
+                                        <button class="btn btn-sm no-bg no-shadow px-0 pager-next">
+                                            <i data-feather="chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <span class="text-muted">Total:</span>
+                                        <span id="count"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ############ Main END-->
+            </div>
+            <!-- ############ Content END-->
+            <!-- ############ Footer START-->
+            <div id="footer" class="page-footer hide">
+                <div class="d-flex p-3">
+                    <span class="text-sm text-muted flex">&copy; Copyright. flatfull.com</span>
+                    <div class="text-sm text-muted">Version 1.1.2</div>
+                </div>
+            </div>
+            <!-- ############ Footer END-->
+        </div>
+        <!-- build:js ../assets/js/site.min.js -->
+        <!-- jQuery -->
+        <script src="../libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- ajax page -->
+        <script src="../libs/pjax/pjax.min.js"></script>
+        <script src="../assets/js/ajax.js"></script>
+        <!-- lazyload plugin -->
+        <script src="../assets/js/lazyload.config.js"></script>
+        <script src="../assets/js/lazyload.js"></script>
+        <script src="../assets/js/plugin.js"></script>
+        <!-- scrollreveal -->
+        <script src="../libs/scrollreveal/dist/scrollreveal.min.js"></script>
+        <!-- feathericon -->
+        <script src="../libs/feather-icons/dist/feather.min.js"></script>
+        <script src="../assets/js/plugins/feathericon.js"></script>
+        <!-- theme -->
+        <script src="../assets/js/theme.js"></script>
+        <script src="../assets/js/utils.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
